@@ -2,16 +2,15 @@
 <html lang="en" itemscope itemtype="http://schema.org/WebPage">
 
 
-<!-- Mirrored from alphaforxyfe.com/user/login by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 11 Mar 2024 11:50:08 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title> Alpha Forex - Login</title>
-    <meta name="title" Content="Alpha Forex - Login">
+    <title> Alpha Forex Lyfe - Login</title>
+    <meta name="title" Content="Alpha Forex Lyfe - Login">
 
-    <meta name="description" content="Alpha Forex is a leading international asset manager, known for its
+    <meta name="description" content="Alpha Forex Lyfe is a leading international asset manager, known for its
 long, short-term and conviction-led approach to investing.">
     <meta name="keywords" content="bitcoin,investment,alpha,forex,company">
     <link rel="shortcut icon" href="../assets/images/logoIcon/favicon.png" type="image/x-icon">
@@ -20,16 +19,16 @@ long, short-term and conviction-led approach to investing.">
     <link rel="apple-touch-icon" href="../assets/images/logoIcon/logo.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Alpha Forex - Login">
+    <meta name="apple-mobile-web-app-title" content="Alpha Forex Lyfe - Login">
     
-    <meta itemprop="name" content="Alpha Forex - Login">
-    <meta itemprop="description" content="Alpha Forex is a leading international asset manager, known for its
+    <meta itemprop="name" content="Alpha Forex Lyfe - Login">
+    <meta itemprop="description" content="Alpha Forex Lyfe is a leading international asset manager, known for its
 long, short-term and conviction-led approach to investing.">
     <meta itemprop="image" content="../assets/images/seo/65be1258275121706955352.png">
     
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Alpha Forex">
-    <meta property="og:description" content="Alpha Forex is a leading international asset manager, known for its
+    <meta property="og:title" content="Alpha Forex Lyfe">
+    <meta property="og:description" content="Alpha Forex Lyfe is a leading international asset manager, known for its
 long, short-term and conviction-led approach to investing.">
     <meta property="og:image" content="../assets/images/seo/65be1258275121706955352.png"/>
     <meta property="og:image:type" content="png"/>
@@ -125,7 +124,7 @@ long, short-term and conviction-led approach to investing.">
                                     </div>
                                 </div>
                                 <button class="btn btn--base outline metamaskLogin w-100 mb-3"><img src="../assets/templates/metro_hyip/images/metamask.png" alt="image" class="metamask-image"> Login with Metamask</button>
-                                <form action="https://alphaforxyfe.com/user/login" method="POST" class="verify-gcaptcha">
+                                <form action="../user/login" method="POST" class="verify-gcaptcha">
                                     <input type="hidden" name="_token" value="ITbyuJKWQX2cnTRIsjXHnlLvCanqfzAAI95O5ZNE">                                    <div class="row">
                                         <div class="col-sm-12">
                                             <label for="username" class="form--label">Username or Email</label>
@@ -224,7 +223,7 @@ long, short-term and conviction-led approach to investing.">
             account = accounts[0];
 
             // get unique message
-            let response = await fetch(`https://alphaforxyfe.com/user/login/metamask`, {
+            let response = await fetch(`../user/login/metamask`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -240,7 +239,7 @@ long, short-term and conviction-led approach to investing.">
                 signature = await web3.eth.personal.sign(message, account);
 
                 // verify signature
-                response = await fetch(`https://alphaforxyfe.com/user/login/metamask/verify`, {
+                response = await fetch(`../user/login/metamask/verify`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -346,7 +345,7 @@ long, short-term and conviction-led approach to investing.">
                 })
                 .then(function (token){   
                     $.ajax({ 
-                        url: 'https://alphaforxyfe.com/add/device/token',
+                        url: '../add/device/token',
                         type: 'POST',
                         data: {
                             token: token,
@@ -385,7 +384,7 @@ long, short-term and conviction-led approach to investing.">
         (function($) {
             "use strict";
             $(".langSel").on("change", function() {
-                window.location.href = "https://alphaforxyfe.com/change/" + $(this).val();
+                window.location.href = "../change/" + $(this).val();
             });
 
             $('.policy').on('click', function() {
@@ -465,5 +464,4 @@ long, short-term and conviction-led approach to investing.">
 </div>
 <!-- TradingView Widget END -->
 
-<!-- Mirrored from alphaforxyfe.com/user/login by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 11 Mar 2024 11:50:17 GMT -->
 </html>
