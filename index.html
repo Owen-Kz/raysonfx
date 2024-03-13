@@ -11,11 +11,11 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Secure and reliable investment project">
-	<meta name="author" content="Yinks Fund">
+	<meta name="author" content="Agunbiabe Ayomide">
 <title> Alpha Forex Lyfe - Home</title>
-    <meta name="title" Content="Alpha Forex - Home">
+    <meta name="title" Content="Alpha Forex Lyfe - Home">
 
-    <meta name="description" content="Alpha Forex is a leading international asset manager, known for its
+    <meta name="description" content="Alpha Forex Lyfe is a leading international asset manager, known for its
 long, short-term and conviction-led approach to investing.">
     <meta name="keywords" content="bitcoin,investment,alpha,forex,company">
     <link rel="shortcut icon" href="assets/images/logoIcon/favicon.png" type="image/x-icon">
@@ -26,14 +26,14 @@ long, short-term and conviction-led approach to investing.">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Alpha Forex - Home">
     
-    <meta itemprop="name" content="Alpha Forex - Home">
-    <meta itemprop="description" content="Alpha Forex is a leading international asset manager, known for its
+    <meta itemprop="name" content="Alpha Forex Lyfe - Home">
+    <meta itemprop="description" content="Alpha Forex Lyfe is a leading international asset manager, known for its
 long, short-term and conviction-led approach to investing.">
     <meta itemprop="image" content="assets/images/seo/65be1258275121706955352.png">
     
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Alpha Forex">
-    <meta property="og:description" content="Alpha Forex is a leading international asset manager, known for its
+    <meta property="og:title" content="Alpha Forex Lyfe">
+    <meta property="og:description" content="Alpha Forex Lyfe is a leading international asset manager, known for its
 long, short-term and conviction-led approach to investing.">
     <meta property="og:image" content="assets/images/seo/65be1258275121706955352.png"/>
     <meta property="og:image:type" content="png"/>
@@ -289,7 +289,7 @@ long, short-term and conviction-led approach to investing.">
 				<div class="primary-header-inner">
 					<div class="header-logo">
 						<a href="index.html">
-							<img src="alphaforex.png" alt="Logo" />Lyfe</a>
+							<img src="alphaforex.png" alt="Logo" /></a>
 					</div><!-- /.header-logo -->
 
 					<div class="header-menu-wrap">
@@ -316,6 +316,17 @@ long, short-term and conviction-led approach to investing.">
 				</div><!-- /.primary-header-one-inner -->
 			</div>
 		</div><!-- /.primary-header-one -->
+		<div class="popup-container">
+			<!-- <div class="popup" id="popup">
+				<span class="close" id="closeBtn">&times;</span> -->
+				<div id="popupContent" class="popup-content">
+					<!-- <span id="username"></span>
+				<span style="color: white; margin-right: 6px;">Withdrawn:</span><span id="amount"></span> -->
+
+				</div>
+				
+			<!-- </div> -->
+		</div>
 	</header><!-- /.header-one -->
   
   
@@ -447,14 +458,16 @@ long, short-term and conviction-led approach to investing.">
 		<div class="row titleBar">
 			<div class="col-md-12 wow fadeInLeft text-center" data-wow-delay="200ms">
 				<div class="section-heading">
-					<h2>Welcome to Alpha Forex</h2>
+					<h2>Welcome to Alpha Forex Lyfe</h2>
 				</div>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-md-6">
-				<img src="front/public/img/business.png" alt='' />
+				<div style="height:551px; background-color: #FFFFFF; overflow:hidden; box-sizing: border-box; border: 1px solid #56667F; border-radius: 4px; text-align: right; line-height:14px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #56667F; padding: 0px; margin: 0px; width: 100%;">
+					<div style="height:531px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=full_v2&amp;theme=light&amp;cnt=8&amp;pref_coin_id=1505&amp;graph=yes" width="100%" height="527px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div><div style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;"><a href="https://coinlib.io/" target="_blank" style="font-weight: 500; color: #FFFFFF; text-decoration:none; font-size:11px">Cryptocurrency Prices</a>&nbsp;by HTML</div></div>
+				<!-- <img src="front/public/img/business.png" alt='' /> -->
 				<div class="dot-pattern"></div>
 			</div>
 
@@ -627,7 +640,7 @@ long, short-term and conviction-led approach to investing.">
 			<div class="col-md-6">
 				<div class="col-md-12 wow fadeInLeft text-center" data-wow-delay="200ms">
 					<div class="section-heading">
-						<h2>Welcome to Alpha Forex</h2>
+						<h2>Welcome to Alpha Forex Lyfe</h2>
 					</div>
 				</div>
 
@@ -949,6 +962,38 @@ long, short-term and conviction-led approach to investing.">
 <div id="scrollup">
 	<button id="scroll-top" class="scroll-to-top"><i class="fas fa-chevron-up"></i></button>
 </div>
+
+<script>
+	// Sample data of withdrawals (username and amount)
+const withdrawals = [
+    { username: "User1", amount: 100 },
+    { username: "User2", amount: 150 },
+    { username: "User3", amount: 200 },
+    // Add more withdrawal data as needed
+];
+
+let currentIndex = 0;
+
+// Function to display the next withdrawal
+function showNextWithdrawal() {
+    if (currentIndex >= withdrawals.length) {
+        currentIndex = 0; // Reset index if reached end
+    }
+    
+    const withdrawal = withdrawals[currentIndex];
+    const popupContent = document.getElementById("popupContent");
+    popupContent.innerHTML = `<h2>${withdrawal.username} Withdrawn:</h2><p>$${withdrawal.amount} USD</p>`;
+    
+    // Increment index for the next withdrawal
+    currentIndex++;
+}
+
+// Show the first withdrawal
+showNextWithdrawal();
+
+// Continuous display of withdrawals
+setInterval(showNextWithdrawal, 4000); // Change the interval time as needed
+</script>
 
 <!-- jQuery Lib -->
 <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="front/public/js/vendor/jquery-1.12.4.min.js"></script>
