@@ -298,12 +298,12 @@ long, short-term and conviction-led approach to investing.">
 							<li><a href="index.html" class='menu-item'>Home</a></li>
 							<li><a href="aboutus.html" class='menu-item'>About Us</a></li>
 							<li><a href="terms.html" class='menu-item'>Terms</a></li>
-							<li><a href='#' class='menu-item'>Login</a></li>							<li><a href="contact.html" class='menu-item'>Contact Us</a></li>
+							<li><a href='user/login.html' class='menu-item'>Login</a></li>							<li><a href="contact.html" class='menu-item'>Contact Us</a></li>
 						</ul>
 					</div><!-- /.header-menu-wrap -->
 
 					<div class="header-right">
-						<a class='header-btn' href='#'>Create Account<span></span></a>
+						<a class='header-btn' href='user/register.html'>Create Account<span></span></a>
 						<!-- Burger menu -->
 						<div class="mobile-menu-icon">
 							<div class="burger-menu">
@@ -320,8 +320,7 @@ long, short-term and conviction-led approach to investing.">
 			<!-- <div class="popup" id="popup">
 				<span class="close" id="closeBtn">&times;</span> -->
 				<div id="popupContent" class="popup-content">
-					<!-- <span id="username"></span>
-				<span style="color: white; margin-right: 6px;">Withdrawn:</span><span id="amount"></span> -->
+					
 
 				</div>
 				
@@ -517,6 +516,38 @@ long, short-term and conviction-led approach to investing.">
 				<div class="service-icon">
 					<img src="front/public/img/pay2.png" width='64px' height='64px' />
 				</div>
+				<p class='plan-title'>Lite Plan</p>
+				<div class="price-holder">
+					<h4 class="price">
+						<span class="symbol"> </span>
+						15%
+						<span class="duration">30 day.</span>
+					</h4>
+				</div>
+
+				<div class="features-list">
+					<ul>
+						<li>Minimum : $200</li>
+						<li>Maximum : $500</li>
+						<li>Principal : Included In Profit</li>
+						<li>Payout : Every Calender Days.</li>
+						<li>25% Return Everyday</li>
+					</ul>
+				</div>
+
+				<a href="#" class="default-btn">
+					Invest Now<i class="las la-long-arrow-alt-right"></i>
+				</a>
+				<div class="dir-overlay"></div>
+			</div>
+		</div>
+
+
+		<div class="col-lg-4 col-sm-6 sm-padding wow fadeInUp" data-wow-delay="300ms">
+			<div class="service-item text-center">
+				<div class="service-icon">
+					<img src="front/public/img/pay2.png" width='64px' height='64px' />
+				</div>
 				<p class='plan-title'>Basic Plan</p>
 				<div class="price-holder">
 					<h4 class="price">
@@ -528,8 +559,8 @@ long, short-term and conviction-led approach to investing.">
 
 				<div class="features-list">
 					<ul>
-						<li>Minimum : $2000</li>
-						<li>Maximum : $10000</li>
+						<li>Minimum : $500</li>
+						<li>Maximum : $1000</li>
 						<li>Principal : Included In Profit</li>
 						<li>Payout : Every Calender Days.</li>
 						<li>25% Return Everyday</li>
@@ -559,8 +590,8 @@ long, short-term and conviction-led approach to investing.">
 
 				<div class="features-list">
 					<ul>
-						<li>Minimum : $10000</li>
-						<li>Maximum : $50000</li>
+						<li>Minimum : $1000</li>
+						<li>Maximum : $10000</li>
 						<li>Principal : Included In Profit</li>
 						<li>Payout : Every Calender Days.</li>
 						<li>35% Return Everyday</li>
@@ -592,8 +623,8 @@ long, short-term and conviction-led approach to investing.">
 
 				<div class="features-list">
 					<ul>
-						<li>Minimum : $50000</li>
-						<li>Maximum : $100000</li>
+						<li>Minimum : $10000</li>
+						<li>Maximum : $50000</li>
 						<li>Principal : Included In Profit</li>
 						<li>Payout : Every Calender Days.</li>
 						<li>50% Return Everyday</li>
@@ -966,33 +997,51 @@ long, short-term and conviction-led approach to investing.">
 <script>
 	// Sample data of withdrawals (username and amount)
 const withdrawals = [
-    { username: "User1", amount: 100 },
-    { username: "User2", amount: 150 },
-    { username: "User3", amount: 200 },
+    { username: "Gregory McDamon", amount: generateRandomPrice(), transType: "Withdrawn" },
+    { username: "Annabelle Willson", amount: generateRandomPrice(),  transType: "Deposited" },
+    { username: "Steven Hathaway", amount: generateRandomPrice(),  transType: "Withdrawn" },
     // Add more withdrawal data as needed
 ];
+
+async function generateRandomPrice() {
+    // Generate a random number between 0 and 1
+    const randomFraction = Math.random();
+    
+    // Scale the random number to the range 200 to 1000
+    const randomPrice = 200 + randomFraction * (1000 - 200);
+    
+    // Round the result to get an integer value
+    return Math.round(randomPrice);
+}
+
+// usage:
+// const randomPrice = generateRandomPrice();
 
 let currentIndex = 0;
 
 // Function to display the next withdrawal
-function showNextWithdrawal() {
+const popupContent = document.getElementById("popupContent");
+
+async function showNextWithdrawal() {
+	
     if (currentIndex >= withdrawals.length) {
         currentIndex = 0; // Reset index if reached end
     }
-    
+	const AMOUNT = await generateRandomPrice()
+
     const withdrawal = withdrawals[currentIndex];
-    const popupContent = document.getElementById("popupContent");
-    popupContent.innerHTML = `<h2>${withdrawal.username} Withdrawn:</h2><p>$${withdrawal.amount} USD</p>`;
+   
+    popupContent.innerHTML = `<h2>${withdrawal.username} ${withdrawal.transType}: </h2><p>$${AMOUNT} USD</p>`;
     
     // Increment index for the next withdrawal
     currentIndex++;
 }
 
 // Show the first withdrawal
-showNextWithdrawal();
+// showNextWithdrawal();
 
 // Continuous display of withdrawals
-setInterval(showNextWithdrawal, 4000); // Change the interval time as needed
+setInterval(showNextWithdrawal,3100); // Change the interval time as needed
 </script>
 
 <!-- jQuery Lib -->
