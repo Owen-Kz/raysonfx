@@ -1,4 +1,4 @@
-const ENDPOINT = "https://weperch.live/api@raysonfx/backend"
+const ENDPOINT = "/backend"
 
 
 function GetParameters(href){
