@@ -22,7 +22,7 @@ if($RecipientEmail){
 
 $sendgrid = new \SendGrid($api);
 try {
-        // $email = new \SendGrid\Mail\Mail();
+        $email = new \SendGrid\Mail\Mail();
         $email->setFrom($senderEmail, "AlphaForex Lyfe");
         $email->setSubject($subject);
         $email->addTo($RecipientEmail, $RecipientName);
