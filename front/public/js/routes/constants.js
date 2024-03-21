@@ -1,4 +1,4 @@
-const ENDPOINT = "https://weperch.live/api@raysonfx/backend"
+const ENDPOINT = 'https://cors-anywhere.herokuapp.com/https://weperch.live/api@raysonfx/backend';
 
 
 function GetParameters(href){
