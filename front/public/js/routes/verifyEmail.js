@@ -1,6 +1,6 @@
 import { parentDirectoryName } from "./constants.js"
 import { SendEmail } from "./email.js"
-import { GetCookie, SetCookies, hoursToKeep } from "./setCookies.js"
+import { DeleteCookie, GetCookie, SetCookies, hoursToKeep } from "./setCookies.js"
 
 const messageContainer = document.getElementById("messageContainer")
 const EmailSent = GetCookie("EmailSent");
@@ -34,6 +34,7 @@ const getUser = JSON.parse(GetCookie("userData"))
                  }else{
                     SendEmail(FormDataValid);
                     SetCookies("EmailSent", "jakjajgenvaintpeinpknbjanbajenptkimbae", hoursToKeep)
+                    DeleteCookie("userData")
                  }
               
         
