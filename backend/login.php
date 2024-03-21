@@ -17,7 +17,7 @@ if(isset($pass) && isset($email_post)){
     
     // $password = $_POST["password"];
 
-    $stmt = $con->prepare("SELECT * FROM `user_data` WHERE `username` = ? OR `email` = ? LIMIT 1");
+    $stmt = $con->prepare("SELECT * FROM `user_data` WHERE `username` = ? OR `email` = ? AND verification_email != 'unverified' LIMIT 1");
     $stmt->bind_param("ss", $userID, $userID);
     
     if($stmt->execute()){

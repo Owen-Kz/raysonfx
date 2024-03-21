@@ -12,6 +12,11 @@ $pass = $data['password'];
 $username_post = $data['username'];
 $first_name  = $data["first_name"];
 $last_name = $data["last_name"];
+$country = $data["country"];
+$address = $data["address"];
+$state = $data["state"];
+$city = $data["city"];
+$zipCode = $data["zipCode"];
 $phonenumber = $data["password"];
 
 
@@ -41,12 +46,12 @@ if(isset($pass) && isset($email_post)&& isset($first_name) && isset($last_name) 
     }
     else {
         // Create a NEw account if the user does not exist i.e record is not >  0
-        $stmt = $con->prepare("INSERT INTO `user_data` (`email`, `username`, `phonenumber`, `first_name`, `last_name`, `password`) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssssss", $email, $username_post,$phonenumber, $first_name, $last_name, $password);
-        // $stmt->execute();
+        $stmt = $con->prepare("INSERT INTO `user_data` (`username`, `email`, `first_name`, `last_name`, `state`, `zip_code`, `city`, `phonenumber`, `country`, `address`, `password`) VALUES (?, ?, ?, ?, ?, ?,?,?,?,?,?)");
+        $stmt->bind_param("sssssssssss", $username_post, $email, $first_name, $last_name, $state,  $zipCode, $city, $phonenumber,  $country, $address, $password);
+
 
         if($stmt->execute()){
- 
+
         $response = array('status' => 'success', 'message' => 'Account Created Successfully', 'statement' => $stmt, 'result' => $result);
         echo json_encode($response);
    
