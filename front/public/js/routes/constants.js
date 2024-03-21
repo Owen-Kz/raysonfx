@@ -36,7 +36,7 @@ if(parentDIRName === "raysonfx"){
     parentDirectoryName = `/${parentDIRName}`
     ENDPOINT = `/${parentDIRName}/backend`
 }else{
-    parentDirectoryName = './'
+    parentDirectoryName = '../'
     ENDPOINT = `/backend`
 }
 export {
