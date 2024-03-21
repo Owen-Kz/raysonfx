@@ -27,11 +27,11 @@ try {
         $email->setSubject($subject);
         $email->addTo($RecipientEmail, $RecipientName);
         $email->addContent(
-            "text/html","$message <p><center><a href=http://test.weperch.live/0auth?email=$RecipientEmail&verify=$encryptedButton>
+            "text/html","$message <p><a href=http://test.weperch.live/0auth?email=$RecipientEmail&verify=$encryptedButton>
             <button style='padding:10px 50px 10px 50px; display:flex; align-self:center; alignt-items:center; justify-self:center; background:dodgerblue; color:white; border:none; outline:none; border-radius:24px; text-align:center;  justfy-content:center;'>
             Verify Email
-            </button></a></center></p>
-            <p><center>(c) $DateObject . Alphaforexlyfe</center></p>"
+            </button></a></p>
+            <p>(c) $DateObject . Alphaforexlyfe</p>"
         );
      
         // $email->addContent("text/plain", $resetToken);
