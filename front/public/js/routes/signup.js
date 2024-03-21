@@ -1,4 +1,4 @@
-import { ENDPOINT } from "./constants.js";
+import { ENDPOINT, getURL, parentDirectoryName } from "./constants.js";
 import { SendEmail } from "./email.js";
 import { DeleteCookie, GetCookie, SetCookies, hoursToKeep } from "./setCookies.js";
 
@@ -8,11 +8,28 @@ const RegistrationForm = document.getElementById("signupForm")
 const RegistrationForm2 = document.getElementById("signupForm2")
 
 const email = document.getElementById("email")
-const first_name = document.getElementById("first_name")
+const first_name = document.getElementById("firstname")
 const country = document.getElementById("country")
 const state = document.getElementById("state")
+const password = document.getElementById("password_confirmation")
 
 
+// redirect ther user if USERDATA exists
+const CurrentPage = getURL()
+
+if(CurrentPage == "/raysonfx/user/user-data.html" || CurrentPage == "/user/user-data.html"){
+    if(userData){
+        console.log('USER DATA AVAILABLE')
+    }else{
+        window.location.href = `${parentDirectoryName}/user/register.html`
+    }
+}else if(CurrentPage == "/raysonfx/user/register.html" || CurrentPage == "/user/register.html"){
+    if(userData){
+        window.location.href = `${parentDirectoryName}/user/user-data.html`
+    }else{
+        console.log('USER DATA NOT AVAILABLE')
+    }
+}
 
 
 if(RegistrationForm){
@@ -26,8 +43,8 @@ if(RegistrationForm){
         const FirstRegData ={
             email: email.value,
             username: username.value,
-            first_name: first_name.value,
-            last_name: last_name.value,
+            country: country.value,
+            phonenumber: mobile.value,
             password: password.value,
         }
         InitializeSignup(FirstRegData)
@@ -36,8 +53,8 @@ if(RegistrationForm){
     
     
     function InitializeSignup(FirstRegData){
-
         SetCookies("userData", JSON.stringify(FirstRegData), hoursToKeep)
+        window.location.href = `${parentDirectoryName}/user/user-data.html`
     }
 }
 
@@ -60,38 +77,23 @@ async function VerifySecondLevelSubmission(){
         if(userEmail != ""){
             const user = {
                 username: exisitingUserData.username,
-                first_name: exisitingUserData.first_name,
-                last_name: exisitingUserData.last_name,
+                country: exisitingUserData.country,
+                phonenumber: exisitingUserData.phonenumber,
                 email: exisitingUserData.email,
-                country: country.value,
+                password: exisitingUserData.password,
+                first_name: first_name.value,
+                last_name: lastname.value,
                 state:  state.value,
                 address: address.value,
                 city: city.value,
-                phonenumber: phonenumber.value,
-                zipCode: zipCode.value,
-                password: exisitingUserData.password
+                zipCode: zip.value,
             }
         
             SetCookies("userData", JSON.stringify(user), hoursToKeep)
-
-            const DateOJ = new Date().getFullYear()
-
-          const FormDataValid= {
-                receiverEmail: exisitingUserData.email,
-                Year: DateOJ,
-                recipientName: exisitingUserData.first_name,
-                subject: `Welcome to AlphaforexLyfe`,
-                message:  `
-                            <div><img src="https://res.cloudinary.com/dll8awuig/image/upload/v1710946645/pf5b8n55pol5kvkpimfa.jpg" width=100% alt=www.alphaforexlyfe.com></div>
-                            <h1>Hi there, ${first_name}</h1>
-                            <h2>Thanks For Joining us,</h2>
-                            <p>Please proceed to, verify your email, make a deposit and start earning.</p>
-                            `,
-            }
-
+            
             const newUserData = GetCookie("userData")
     
-            REGISTER(newUserData, FormDataValid)
+            REGISTER(newUserData)
             
         }
     }
@@ -112,8 +114,7 @@ function REGISTER(user, FormDataValid){
         if(data.status === "success"){
             // window.location.href = "WE SENT EMAIL VERIFICATION PAGE"
             console.log(data.message)
-            SendEmail(FormDataValid);
-            DeleteCookie("userData");
+            window.location.href = `${parentDirectoryName}/user/verify-email/`
         }else{
             alert(data.message)
             console.log(data.message)

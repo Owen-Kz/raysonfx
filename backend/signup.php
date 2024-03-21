@@ -27,10 +27,10 @@ $email = mysqli_real_escape_string($con, $email_post);
 $password = password_hash($pass, PASSWORD_DEFAULT);
 
 
-if(isset($pass) && isset($email_post)&& isset($first_name) && isset($last_name) && isset($username_post)){
+if(isset($pass) && isset($email_post) && isset($first_name) && isset($last_name) && isset($username_post)){
 // CHeck if the user already exists
-    $stmt = $con->prepare("SELECT * FROM `user_data` WHERE `email` = ? AND `username` = ? AND `first_name` = ? AND last_name = ?");
-    $stmt->bind_param("ssss", $email, $username_post, $first_name, $last_name);
+    $stmt = $con->prepare("SELECT * FROM `user_data` WHERE `email` = ? OR `username` = ? ");
+    $stmt->bind_param("ss", $email, $username_post);
     $stmt->execute();
     $result = $stmt->get_result();
     $run_query = $result;
