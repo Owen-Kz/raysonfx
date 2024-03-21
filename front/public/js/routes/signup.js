@@ -1,6 +1,6 @@
 import { ENDPOINT } from "./constants.js";
 import { SendEmail } from "./email.js";
-import { GetCookie, SetCookies, hoursToKeep } from "./setCookies.js";
+import { DeleteCookie, GetCookie, SetCookies, hoursToKeep } from "./setCookies.js";
 
 const userData = GetCookie("userData")
 
