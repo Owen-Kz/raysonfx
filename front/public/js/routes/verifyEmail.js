@@ -34,7 +34,6 @@ const getUser = JSON.parse(GetCookie("userData"))
                  }else{
                     SendEmail(FormDataValid);
                     SetCookies("EmailSent", "jakjajgenvaintpeinpknbjanbajenptkimbae", hoursToKeep)
-                    DeleteCookie("userData")
                  }
               
         
