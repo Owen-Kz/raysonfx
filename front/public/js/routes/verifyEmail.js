@@ -33,6 +33,7 @@ const getUser = JSON.parse(GetCookie("userData"))
                     console.log("Email Already Sent") 
                  }else{
                     SendEmail(FormDataValid);
+                    console.log(FormDataValid.receiverEmail)
                     SetCookies("EmailSent", "jakjajgenvaintpeinpknbjanbajenptkimbae", hoursToKeep)
                  }
               
