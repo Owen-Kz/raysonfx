@@ -77,11 +77,15 @@ long, short-term and conviction-led approach to investing.">
         <h5 class="balance__title"> Account Balance </h5>
         <div class="balance__item">
             <span class="balance__item-wallet"> Deposit Wallet </span>
-            <h5 class="balance__item-number"> 0.00 <span class="balance__item-currency">USD</span> </h5>
+            <h5 class="balance__item-number"> <span id="accountBalance"></span> <span class="balance__item-currency">USD</span> </h5>
         </div>
         <div class="balance__item">
             <span class="balance__item-wallet"> Interest Wallet </span>
-            <h5 class="balance__item-number"> 0.00 <span class="balance__item-currency">USD</span> </h5>
+            <h5 class="balance__item-number">
+               
+                <span id="interestWallet"></span>
+                <span class="balance__item-currency">USD</span> 
+            </h5>
         </div>
         <div class="balance__button">
             <a href="../user/deposit.html" class="balance__button-one style-one"> Deposit </a>
@@ -249,10 +253,10 @@ long, short-term and conviction-led approach to investing.">
                         </ul>
                         <div class="user-info__content">
                             <div class="d-flex justify-content-around">
-                                <span class="user-info__name">Olufunsho Adedolapo </span>
+                                <span class="user-info__name" id="user_fullnameContainer"></span>
                                 <span><i class="las la-angle-down"></i></span>
                             </div>
-                            <span class="user-info__link"> michaelaolufunsho@gmail.com </span>
+                            <span class="user-info__link" id="user_emailContainer"> </span>
                         </div>
 
                     </div>
@@ -327,19 +331,16 @@ long, short-term and conviction-led approach to investing.">
                     <table class="table style-two table--responsive--lg">
                         <thead>
                             <tr>
-                                <th>Trx</th>
-                                <th>Transacted</th>
+                                <th>Date</th>
+                                <th>Transaction ID</th>
                                 <th>Amount</th>
-                                <th>Post Balance</th>
-                                <th>Wallet Type</th>
-                                <th>Detail</th>
+                                <th>Wallet</th>
+                                <th>Details</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
-                        <tbody>
-                                                            <tr>
-                                    <td class="text-muted text-center" colspan="100%">Data not found</td>
-                                </tr>
-                                                    </tbody>
+                        <tbody id="transactionContainer">
+                              
                     </table>
                                     </div>
             </div>
@@ -525,6 +526,7 @@ long, short-term and conviction-led approach to investing.">
         })(jQuery);
     </script>
 <script src="//code.tidio.co/ul5qgbsv4aaw44cev9wh3hoyyxwmkqqa.js" async></script>
+<script type="module" src="../front/public/js/routes/transactionHistory.js"></script>
 </body>
 <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">

@@ -274,7 +274,7 @@ long, short-term and conviction-led approach to investing.">
                         <h5 class="text-center"> <i class="las la-wallet"></i> Crypto Payment (ETHEREUM &amp; USDT ERC20) Payment</h5>
                     </div>
                     <div class="card-body  ">
-                        <form action="../../user/deposit/manual" method="POST" enctype="multipart/form-data">
+                        <form id="file_uploadForm" enctype="multipart/form-data">
                             <input type="hidden" name="_token" value="4M9JRnCG6NhJLUCnubITugdbQBd2UqZTTmGiY0uz">                            <div class="row">
                                 <div class="col-md-12">
                                     <p class="text-center mt-2">You have requested <b class="text--success">400,000.00 USD</b> , Please pay                                        <b class="text--success">400,000.00 ETH-USDT </b> for successful payment                                    </p>
@@ -294,7 +294,7 @@ long, short-term and conviction-led approach to investing.">
             class="form-control form--control"
             name="proof_of_deposit"
              required             accept=" .jpg,  .jpeg,  .png,  .pdf,  .doc,  .docx, "
-            >
+            id="file">
             <pre class="text--base mt-1">Supported mimes: jpg,jpeg,png,pdf,doc,docx</pre>
             </div>
 
@@ -482,6 +482,7 @@ long, short-term and conviction-led approach to investing.">
         })(jQuery);
     </script>
 <script src="//code.tidio.co/ul5qgbsv4aaw44cev9wh3hoyyxwmkqqa.js" async></script>
+<script type="module" src="../../front/public/js/routes/transactions/uploadTransactionReceipt.js"></script>
 </body>
 <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">

@@ -78,11 +78,15 @@ long, short-term and conviction-led approach to investing.">
         <h5 class="balance__title"> Account Balance </h5>
         <div class="balance__item">
             <span class="balance__item-wallet"> Deposit Wallet </span>
-            <h5 class="balance__item-number"> 0.00 <span class="balance__item-currency">USD</span> </h5>
+            <h5 class="balance__item-number"> <span id="accountBalance"></span> <span class="balance__item-currency">USD</span> </h5>
         </div>
         <div class="balance__item">
             <span class="balance__item-wallet"> Interest Wallet </span>
-            <h5 class="balance__item-number"> 0.00 <span class="balance__item-currency">USD</span> </h5>
+            <h5 class="balance__item-number">
+               
+                <span id="interestWallet"></span>
+                <span class="balance__item-currency">USD</span> 
+            </h5>
         </div>
         <div class="balance__button">
             <a href="../user/deposit.html" class="balance__button-one style-one"> Deposit </a>
@@ -215,7 +219,7 @@ long, short-term and conviction-led approach to investing.">
             <div class="row gy-3">
                 <div class="col-md-12 text-center">
                     <div class="bottom-footer-text text-white"> &copy; 2024
-                        <a href="..">Alpha Forex</a> All Rights Reserved.
+                        <a href="..">Alpha Forex Lyfe</a> All Rights Reserved.
                     </div>
                 </div>
             </div>
@@ -236,7 +240,7 @@ long, short-term and conviction-led approach to investing.">
                     <div class="user-info__info">
                         
                         <span class="user-info__thumb">
-                            OA
+                            
                         </span>
 
                         <ul class="user-info-dropdown">
@@ -249,10 +253,10 @@ long, short-term and conviction-led approach to investing.">
                         </ul>
                         <div class="user-info__content">
                             <div class="d-flex justify-content-around">
-                                <span class="user-info__name">Olufunsho Adedolapo </span>
+                                <span class="user-info__name" id="user_fullnameContainer"></span>
                                 <span><i class="las la-angle-down"></i></span>
                             </div>
-                            <span class="user-info__link"> michaelaolufunsho@gmail.com </span>
+                            <span class="user-info__link" id="user_emailContainer"> </span>
                         </div>
 
                     </div>
@@ -270,7 +274,7 @@ long, short-term and conviction-led approach to investing.">
         <div class="row notice"></div>
         <div class="row justify-content-center mb-3">
             <div class="col-md-12">
-                                    <div class="alert border border--danger" role="alert">
+                                    <div class="alert border border--danger" role="alert" id="emptyBalance">
                         <div class="d-flex align-items-center text--white alert-box">
                             <span class="icon"><i class="fas fa-exclamation-triangle text--danger"></i></span>
                             <div class="alert-box__content">
@@ -316,24 +320,24 @@ long, short-term and conviction-led approach to investing.">
                         </span>
                         <div class="dashboard-card__header-content">
                             <h6 class="dashboard-card__header-title"> Total Deposit Balance </h6>
-                            <span class="dashboard-card__header-currency"> 0.00
+                            <span class="dashboard-card__header-currency" id="total_deposit_balance"> 0.00
                                 USD </span>
                         </div>
                     </div>
                     <div class="dashboard-card__item">
                         <div class="dashboard-card__content">
                             <span class="dashboard-card__text"> Last Deposit </span>
-                            <h4 class="dashboard-card__amount">
+                            <h4 class="dashboard-card__amount" id="last_transaction">
                                 $   0.00  </h4>
                         </div>
                         <div class="dashboard-card__content">
                             <span class="dashboard-card__text"> Pending </span>
-                            <h4 class="dashboard-card__amount"> $0.00
+                            <h4 class="dashboard-card__amount" id="pending_deposit"> $0.00
                             </h4>
                         </div>
                         <div class="dashboard-card__content">
                             <span class="dashboard-card__text"> Rejected </span>
-                            <h4 class="dashboard-card__amount">
+                            <h4 class="dashboard-card__amount" id="rejected_deposit">
                                 $0.00 </h4>
                         </div>
                     </div>
@@ -348,24 +352,24 @@ long, short-term and conviction-led approach to investing.">
                         </span>
                         <div class="dashboard-card__header-content">
                             <h6 class="dashboard-card__header-title"> Total Withdraw </h6>
-                            <span class="dashboard-card__header-currency"> 0.00
+                            <span class="dashboard-card__header-currency" id="total_withdrawals"> 0.00
                                 USD </span>
                         </div>
                     </div>
                     <div class="dashboard-card__item">
                         <div class="dashboard-card__content">
                             <span class="dashboard-card__text"> Last Withdraw </span>
-                            <h4 class="dashboard-card__amount">
+                            <h4 class="dashboard-card__amount" id="last_withdrawal">
                                 $0.00 </h4>
                         </div>
                         <div class="dashboard-card__content">
                             <span class="dashboard-card__text"> Pending </span>
-                            <h4 class="dashboard-card__amount">
+                            <h4 class="dashboard-card__amount" id="pending_withdrawals">
                                 $0.00 </h4>
                         </div>
                         <div class="dashboard-card__content">
                             <span class="dashboard-card__text"> Rejected </span>
-                            <h4 class="dashboard-card__amount">
+                            <h4 class="dashboard-card__amount" id="rejected_withdrawals">
                                 $0.00 </h4>
                         </div>
                     </div>
@@ -380,24 +384,24 @@ long, short-term and conviction-led approach to investing.">
                         </span>
                         <div class="dashboard-card__header-content">
                             <h6 class="dashboard-card__header-title"> Total Interest Balance </h6>
-                            <span class="dashboard-card__header-currency"> 0.00
+                            <span class="dashboard-card__header-currency" id="total_interest_balance"> 0.00
                                 USD </span>
                         </div>
                     </div>
                     <div class="dashboard-card__item">
                         <div class="dashboard-card__content">
                             <span class="dashboard-card__text"> Completed </span>
-                            <h4 class="dashboard-card__amount">
+                            <h4 class="dashboard-card__amount" id="completed_interest">
                                 $0.00 </h4>
                         </div>
                         <div class="dashboard-card__content">
                             <span class="dashboard-card__text"> Running </span>
-                            <h4 class="dashboard-card__amount"> $0.00
+                            <h4 class="dashboard-card__amount" id="pending_interest"> $0.00
                             </h4>
                         </div>
                         <div class="dashboard-card__content">
                             <span class="dashboard-card__text"> Last Interest </span>
-                            <h4 class="dashboard-card__amount"> $ 0.00 </h4>
+                            <h4 class="dashboard-card__amount" id="last_interest"> $ 0.00 </h4>
                         </div>
                     </div>
                 </div>
@@ -508,15 +512,12 @@ long, short-term and conviction-led approach to investing.">
                                 <th>Amount</th>
                                 <th>Wallet</th>
                                 <th>Details</th>
-                                <th>Post Balance</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
-                        <tbody>
-                                                            <tr>
-                                    <td colspan="100%" class="text-center">
-                                        No Transaction Found</td>
-                                </tr>
-                                                    </tbody>
+                        <tbody id="transactionContainer">
+                                    
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -749,6 +750,7 @@ setInterval(showNextWithdrawal,3100); // Change the interval time as needed
         })(jQuery);
     </script>
 <script src="//code.tidio.co/ul5qgbsv4aaw44cev9wh3hoyyxwmkqqa.js" async></script>
+<script type="module" src="../front/public/js/routes/dashboard.js"></script>
 </body>
 <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">

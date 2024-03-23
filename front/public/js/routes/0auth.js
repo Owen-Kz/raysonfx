@@ -1,4 +1,4 @@
-import { ENDPOINT, GetParameters } from "./constants.js";
+import { ENDPOINT, GetParameters, parentDirectoryName } from "./constants.js";
 
 const currentLocationURL = window.location.href
 
@@ -20,7 +20,7 @@ fetch(`${ENDPOINT}/verifyEmail.php`, {
 .then(data => {
     if(data.status === "success"){
         console.log(data.message)
-        window.location.href = "/user/authorization.html"
+        window.location.href = `${parentDirectoryName}/user/authorization.html`
     }else{
         console.log(data.message)
     }

@@ -1,6 +1,6 @@
 <?php
 
-require_once "./exportENV.php";
+require_once dirname(__DIR__) . "/backend/exportENV.php";
 
 $servername = $_ENV['DB_HOST_RAYSON'];
 $username = $_ENV['DB_USER_RAYSON'];
