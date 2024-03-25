@@ -4,8 +4,8 @@ require '../vendor/autoload.php'; // If you're using Composer (recommended)
 require "./exportENV.php";
 // include "./db.php";
 
-$api = $_ENV['SENDGRID_API_KEY'];
-$senderEmail = $_ENV["SENDGRID_EMAIL"];
+$api = $SENDGRID_API_KEY;
+$senderEmail = $SENDGRID_EMAIL;
 
 $data = json_decode(file_get_contents('php://input'), true);
 
