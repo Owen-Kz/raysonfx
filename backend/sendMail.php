@@ -1,6 +1,8 @@
 <?php
-require '../vendor/autoload.php'; // If you're using Composer (recommended)
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
+require '../vendor/autoload.php'; // If you're using Composer (recommended)
 require "./exportENV.php";
 // include "./db.php";
 
@@ -23,7 +25,7 @@ if($RecipientEmail){
 $sendgrid = new \SendGrid($api);
 try {
         $email = new \SendGrid\Mail\Mail();
-        $email->setFrom("no-reply@alphaforexlyfe.pro", "AlphaForex Lyfe");
+        $email->setFrom($senderEmail, "AlphaForex Lyfe");
         $email->setSubject($subject);
         $email->addTo($RecipientEmail, $RecipientName);
         $email->addContent(
