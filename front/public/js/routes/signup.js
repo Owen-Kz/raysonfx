@@ -103,7 +103,7 @@ async function VerifySecondLevelSubmission(){
 
 // Final function to register the user 
 function REGISTER(user){
-    fetch(`../../../../backend/signup.php`, {
+    fetch(`${ENDPOINT}/signup.php`, {
         method:"POST",
         body: user,
         headers: {

@@ -35,10 +35,10 @@ function getURL(){
 
 if(parentDIRName === "raysonfx"){
     parentDirectoryName = `/${parentDIRName}`
-    ENDPOINT = `/${parentDIRName}/backend`
+    ENDPOINT = `/${parentDIRName}/place`
 }else{
     parentDirectoryName = `${origin}`
-    ENDPOINT = `/backend`
+    ENDPOINT = `/place`
 }
 export {
     ENDPOINT,
