@@ -17,6 +17,7 @@ return searchParams
 
 // Get the current URL pathname
 const pathname = window.location.pathname;
+const origin = window.location.origin
 
 // Split the pathname by slashes to get the individual segments
 const segments = pathname.split('/');
@@ -36,7 +37,7 @@ if(parentDIRName === "raysonfx"){
     parentDirectoryName = `/${parentDIRName}`
     ENDPOINT = `/${parentDIRName}/backend`
 }else{
-    parentDirectoryName = 'http://alphaforexlyfe.pro'
+    parentDirectoryName = `${origin}`
     ENDPOINT = `/backend`
 }
 export {
