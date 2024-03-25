@@ -7,8 +7,8 @@ session_start();
 $data = json_decode(file_get_contents('php://input'), true);
 
 // Access the values
-$email_post = $data['email'];
-$pass = $data['pass'];
+$email_post = $data['username'];
+$pass = $data['password'];
 
 if(isset($pass) && isset($email_post)){
 
@@ -17,7 +17,7 @@ if(isset($pass) && isset($email_post)){
     
     // $password = $_POST["password"];
 
-    $stmt = $con->prepare("SELECT * FROM `user_data` WHERE `username` = ? OR `email` = ? LIMIT 1");
+    $stmt = $con->prepare("SELECT * FROM `user_data` WHERE `username` = ? OR `email` = ? AND verification_email != 'unverified' LIMIT 1");
     $stmt->bind_param("ss", $userID, $userID);
     
     if($stmt->execute()){
@@ -46,8 +46,9 @@ if(isset($pass) && isset($email_post)){
         $ip_add = getenv("REMOTE_ADDR"); 
 
         // $HOTEL =  $_SESSION["Hotel_name"];
+        $userLogin = array("user" => md5($row["email"]), "id" => md5($row["id"]));
 
-        $response = array('status' => 'success', 'message' => 'Logged in successfully', 'userData' => $row);
+        $response = array('status' => 'success', 'message' => 'Logged in successfully', 'userData' => $userLogin);
         echo json_encode($response);
     }else{
         $response = array('status' => 'error', 'message' => 'Invalid Credentials', 'userData' => "[]");
@@ -56,7 +57,7 @@ if(isset($pass) && isset($email_post)){
     
     }
     else {
-        $response = array('status' => 'error', 'message' => 'User not found', 'userData' => '$row');
+        $response = array('status' => 'error', 'message' => 'Invalid Login details provided / Email not verified ', 'userData' => '[]');
         echo json_encode($response);
     }
     
@@ -64,7 +65,7 @@ if(isset($pass) && isset($email_post)){
     echo "Error: " . $stmt->error;
 }
 }else{
-    $response = array('status' => 'error', 'message' => 'Fill all fields', 'userData' => '$row');
+    $response = array('status' => 'error', 'message' => 'Fill all fields', 'userData' => '[]');
     echo json_encode($response);
 }
 

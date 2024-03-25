@@ -14,7 +14,7 @@ if(isset($amountToAdd) && isset($userID) ){
     // CHeck if the user already exists
     
         $stmt = $con->prepare("SELECT * FROM `user_data` WHERE `email` = ? OR `username` = ? ");
-        $stmt->bind_param("ss", $email, $username_post, $first_name, $last_name);
+        $stmt->bind_param("ss", $email, $username_post);
         $stmt->execute();
         $result = $stmt->get_result();
         $run_query = $result;
@@ -25,7 +25,7 @@ if(isset($amountToAdd) && isset($userID) ){
 
         $Balance = $row["current_balance"];
         $NewBalance = $amountToAdd + $Balance;
-        $TransactionType = "Credit";
+        $TransactionType = "depositWalletCredit";
         //if user record is available in database then $count will be equal to 1
         if($count > 0){
             // Create a NEw account if the user does not exist i.e record is not >  0
