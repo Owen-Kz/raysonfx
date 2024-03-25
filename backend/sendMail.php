@@ -4,8 +4,8 @@ require '../vendor/autoload.php'; // If you're using Composer (recommended)
 require "./exportENV.php";
 // include "./db.php";
 
-$api = $SENDGRID_API_KEY;
-$senderEmail = $SENDGRID_EMAIL;
+$api = $_ENV['SENDGRID_API_KEY'];
+$senderEmail = $_ENV["SENDGRID_EMAIL"];
 
 $data = json_decode(file_get_contents('php://input'), true);
 
@@ -23,7 +23,7 @@ if($RecipientEmail){
 $sendgrid = new \SendGrid($api);
 try {
         $email = new \SendGrid\Mail\Mail();
-        $email->setFrom($senderEmail, "AlphaForex Lyfe");
+        $email->setFrom("no-reply@alphaforexlyfe.pro", "AlphaForex Lyfe");
         $email->setSubject($subject);
         $email->addTo($RecipientEmail, $RecipientName);
         $email->addContent(
