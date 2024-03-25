@@ -1,6 +1,6 @@
 <?php
 
-include "db.php";
+include "./db.php";
 session_start();
 // Get the JSON data from the POST request
 
