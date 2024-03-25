@@ -52,12 +52,13 @@ if(isset($pass) && isset($email_post) && isset($first_name) && isset($last_name)
 
         if($stmt->execute()){
 
-        $response = array('status' => 'success', 'message' => 'Account Created Successfully', 'statement' => $stmt, 'result' => $result);
+        $response = array('status' => 'success', 'message' => 'Account Created Successfully', 'statement' => $count, 'result' => $result);
         echo json_encode($response);
    
     }
     else{
-        echo "Error: " . $stmt->error;
+        $response = array('status' => 'success', 'message' => 'Account Created Successfully', "Error: " . $stmt->error, 'result' => "$result");
+        echo json_encode($response);
     }
     }
 }else{
