@@ -63,9 +63,12 @@ if(isset($pass) && isset($email_post) && isset($first_name) && isset($last_name)
     }
 }else{
     $response = array('status' => 'error', 'message' => 'Incomplete data');
-echo json_encode($response);
+    echo json_encode($response);
     
 }
+$response = array('status' => 'error', 'message' => 'Incomplete data');
+echo json_encode($response);
+
 
 
 ?>
