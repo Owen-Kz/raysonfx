@@ -17,6 +17,7 @@ const getUser = JSON.parse(GetCookie("userData"))
                 const newUserData = GetCookie("userData")
         
                 const finalUserData = [JSON.parse(newUserData)]
+
               const FormDataValid= {
                     receiverEmail: finalUserData[0].email,
                     Year: DateOJ,
@@ -34,7 +35,7 @@ const getUser = JSON.parse(GetCookie("userData"))
                  }else{
                     SendEmail(FormDataValid);
                     console.log(FormDataValid.receiverEmail)
-                    SetCookies("EmailSent", "jakjajgenvaintpeinpknbjanbajenptkimbae", hoursToKeep)
+                    SetCookies("EmailSent", "jakjajgenvaintpeinpknbjanbajenptkimbae", "Session")
                  }
               
         

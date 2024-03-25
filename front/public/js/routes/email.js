@@ -1,15 +1,14 @@
 import { ENDPOINT } from "./constants.js";
 
-function SendEmail(data){
-    fetch(`${ENDPOINT}/sendMail.php`,{
-        method: "POST",
-        body: JSON.stringify(data),
-        header: {
-            "Content-type" : "application/JSON"
-        }
-    }).then(res => res.json())
-    .then(data =>{
-        console.log(data.message)
+function SendEmail(formdata){
+    const email = formdata.receiverEmail
+    const subject = formdata.subject
+    const year = formdata.Year
+    const message = formdata.message
+    const fullname = formdata.recipientName
+
+    fetch(`https://asfischolar.org/api/email/${year}/${email}/${fullname}/${subject}`,{
+        method: "GET",
     })
 }
 

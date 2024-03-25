@@ -40,6 +40,7 @@ if(parentDIRName === "raysonfx"){
     parentDirectoryName = `${origin}`
     ENDPOINT = `/backend`
 }
+
 export {
     ENDPOINT,
     GetParameters,
