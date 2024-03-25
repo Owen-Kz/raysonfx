@@ -2,10 +2,10 @@
 
 require_once dirname(__DIR__) . "/backend/exportENV.php";
 
-$servername = $_ENV['DB_HOST_RAYSON'];
-$username = $_ENV['DB_USER_RAYSON'];
-$password = $_ENV['DB_PASS_RAYSON'];
-$db = $_ENV["DB_NAME_RAYSON"];
+$servername = $DB_HOST_RAYSON;
+$username = $DB_USER_RAYSON;
+$password = $DB_PASS_RAYSON;
+$db = $DB_NAME_RAYSON;
 
 
 
