@@ -36,7 +36,7 @@ if(parentDIRName === "raysonfx"){
     parentDirectoryName = `/${parentDIRName}`
     ENDPOINT = `/${parentDIRName}/backend`
 }else{
-    parentDirectoryName = 'http://test.weperch.live'
+    parentDirectoryName = 'http://alphaforexlyfe.pro'
     ENDPOINT = `/backend`
 }
 export {
