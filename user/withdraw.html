@@ -5,8 +5,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title> Alpha Forex Lyfe - Transactions</title>
-    <meta name="title" Content="Alpha Forex Lyfe - Transactions">
+    <title> Alpha Forex Lyfe - Withdraw Methods</title>
+    <meta name="title" Content="Alpha Forex Lyfe - Withdraw Methods">
 
     <meta name="description" content="Alpha Forex Lyfe is a leading international asset manager, known for its
 long, short-term and conviction-led approach to investing.">
@@ -17,9 +17,9 @@ long, short-term and conviction-led approach to investing.">
     <link rel="apple-touch-icon" href="../assets/images/logoIcon/logo.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Alpha Forex Lyfe - Transactions">
+    <meta name="apple-mobile-web-app-title" content="Alpha Forex Lyfe - Withdraw Methods">
     
-    <meta itemprop="name" content="Alpha Forex Lyfe - Transactions">
+    <meta itemprop="name" content="Alpha Forex Lyfe - Withdraw Methods">
     <meta itemprop="description" content="Alpha Forex Lyfe is a leading international asset manager, known for its
 long, short-term and conviction-led approach to investing.">
     <meta itemprop="image" content="../assets/images/seo/65be1258275121706955352.png">
@@ -32,7 +32,7 @@ long, short-term and conviction-led approach to investing.">
     <meta property="og:image:type" content="png"/>
     <meta property="og:image:width" content="1180" />
     <meta property="og:image:height" content="600" />
-    <meta property="og:url" content="../user/transactions.html">
+    <meta property="og:url" content="../user/Withdraw.html">
     
     <meta name="twitter:card" content="summary_large_image">
     <!-- Bootstrap CSS -->
@@ -74,7 +74,7 @@ long, short-term and conviction-led approach to investing.">
 
     <div class="dashboard-header__inner">
         <div class="dashboard-header__left">
-            <h4 class="dashboard-header__left-title"> Transactions </h4>
+            <h4 class="dashboard-header__left-title"> Withdraw Methods </h4>
         </div>
         <div class="dashboard-header__right">
             <div class="user-info">
@@ -96,10 +96,10 @@ long, short-term and conviction-led approach to investing.">
                         </ul>
                         <div class="user-info__content">
                             <div class="d-flex justify-content-around">
-                                <span class="user-info__name" id="user_fullnameContainer"></span>
+                                <span class="user-info__name">Olufunsho Adedolapo </span>
                                 <span><i class="las la-angle-down"></i></span>
                             </div>
-                            <span class="user-info__link" id="user_emailContainer"> </span>
+                            <span class="user-info__link"> michaelaolufunsho@gmail.com </span>
                         </div>
 
                     </div>
@@ -113,79 +113,61 @@ long, short-term and conviction-led approach to investing.">
     <span class="dashboard-body__bar-icon"><i class="las la-bars"></i></span>
 </div>
                 <div class="dashboard-body">
-                    <section class="pt-3">
-        <div class="containerf">
-            <div class="row justify-content-center">
-                <div class="col-md-12">
-                    <div class="show-filter mb-3 text-end">
-                        <button type="button" class="btn btn--base showFilterBtn btn-sm"><i class="las la-filter"></i>
-                            Filter</button>
-                    </div>
-                    <div class="card custom--card responsive-filter-card mb-4">
-                        <div class="card-body">
-                            <form action="">
-                                <div class="d-flex flex-wrap gap-4">
-                                    <div class="flex-grow-1">
-                                        <label class="form--label">Transaction Number</label>
-                                        <input type="text" name="search" value=""
-                                            class="form--control">
-                                    </div>
-                                    <div class="flex-grow-1">
-                                        <label class="form--label">Wallet Type</label>
-                                        <select name="wallet_type" class="form--control">
-                                            <option value="">All</option>
-                                            <option value="deposit_wallet" >Deposit Wallet                                            </option>
-                                            <option value="interest_wallet" >Interest Wallet                                            </option>
-                                        </select>
-                                    </div>
-                                    <div class="flex-grow-1">
-                                        <label class="form--label">Type</label>
-                                        <select name="trx_type" class="form--control">
-                                            <option value="">All</option>
-                                            <option value="+" >Plus</option>
-                                            <option value="-" >Minus</option>
-                                        </select>
-                                    </div>
-                                    <div class="flex-grow-1">
-                                        <label class="form--label">Remark</label>
-                                        <select class="form--control " name="remark">
-                                            <option value="">Any</option>
-                                                                                            <option value="balance_add" >
-                                                    Balance add</option>
-                                                                                            <option value="balance_subtract" >
-                                                    Balance subtract</option>
-                                                                                            <option value="deposit" >
-                                                    Deposit</option>
-                                                                                            <option value="invest" >
-                                                    Invest</option>
-                                                                                            <option value="registration_bonus" >
-                                                    Registration bonus</option>
-                                                                                    </select>
-                                    </div>
-                                    <div class="flex-grow-1 align-self-end">
-                                        <button class="btn btn--base w-100"><i class="las la-filter"></i>
-                                            Filter</button>
-                                    </div>
-                                </div>
-                            </form>
+                    <section class="row gy-4 pt-120 justify-content-center">
+        <div class="col-xl-6 col-md-6">
+            <div class="card custom--card">
+                <div class="card-body">
+                    <form id="withdrawForm">
+                        <input type="hidden" name="_token" value="iCfgePnuRvf06py32wpYzvt51Ade7iPE4UUazYTA">                        <input type="hidden" name="currency">
+
+                        <div class="form-group">
+                            <label for="gateway" class="form--label">Select Gateway</label>
+                            <select class="form--control" name="gateway" required id="gateway">
+                                <option value="">Select One</option>
+                                                                    <option value="1000"                                         data-gateway="{&quot;id&quot;:1,&quot;name&quot;:&quot;Crypto Payment (BTC)&quot;,&quot;currency&quot;:&quot;$&quot;,&quot;symbol&quot;:&quot;&quot;,&quot;method_code&quot;:1000,&quot;gateway_alias&quot;:&quot;crypto_payment_(btc)&quot;,&quot;min_amount&quot;:&quot;500.00000000&quot;,&quot;max_amount&quot;:&quot;1000000000.00000000&quot;,&quot;percent_charge&quot;:&quot;0.00&quot;,&quot;fixed_charge&quot;:&quot;0.00000000&quot;,&quot;rate&quot;:&quot;1.00000000&quot;,&quot;image&quot;:null,&quot;created_at&quot;:&quot;2024-02-01T14:40:12.000000Z&quot;,&quot;updated_at&quot;:&quot;2024-02-23T23:07:24.000000Z&quot;,&quot;method&quot;:{&quot;id&quot;:59,&quot;form_id&quot;:1,&quot;code&quot;:&quot;1000&quot;,&quot;name&quot;:&quot;Crypto Payment (BTC)&quot;,&quot;alias&quot;:&quot;crypto_payment_(btc)&quot;,&quot;status&quot;:true,&quot;supported_currencies&quot;:[],&quot;crypto&quot;:0,&quot;description&quot;:&quot;&lt;font color=\&quot;#ffffff\&quot; style=\&quot;background-color: rgb(255, 255, 255);\&quot;&gt;&lt;span style=\&quot;font-family: Montserrat, sans-serif;\&quot;&gt;&lt;font color=\&quot;#ffffff\&quot;&gt;Please Kindly Make Payment To This Bitcoin Wallet&lt;\/font&gt;&lt;\/span&gt;&lt;\/font&gt;&amp;nbsp;1AUbYjNGF1en5X7oJTpcXXrG83tzFNE3NK&lt;font color=\&quot;#ffffff\&quot; style=\&quot;background-color: rgb(255, 255, 255);\&quot;&gt;&lt;span style=\&quot;font-family: Montserrat, sans-serif;\&quot;&gt;&lt;font color=\&quot;#ffffff\&quot;&gt;&amp;nbsp;Address:&lt;\/font&gt;&amp;nbsp;&lt;\/span&gt;1AUbYjNGF1en5X7oJTpcXXrG83tzFNE3NK&lt;\/font&gt;&quot;,&quot;created_at&quot;:&quot;2024-02-01T14:40:12.000000Z&quot;,&quot;updated_at&quot;:&quot;2024-02-23T23:07:24.000000Z&quot;}}">Crypto Payment (BTC)</option>
+                                                                    <option value="1001"                                         data-gateway="{&quot;id&quot;:2,&quot;name&quot;:&quot;Crypto Payment (ETHEREUM &amp; USDT ERC20)&quot;,&quot;currency&quot;:&quot;ETH-USDT&quot;,&quot;symbol&quot;:&quot;&quot;,&quot;method_code&quot;:1001,&quot;gateway_alias&quot;:&quot;crypto_payment_(ethereum_&amp;_usdt_erc20)&quot;,&quot;min_amount&quot;:&quot;500.00000000&quot;,&quot;max_amount&quot;:&quot;100000000000000000.00000000&quot;,&quot;percent_charge&quot;:&quot;0.00&quot;,&quot;fixed_charge&quot;:&quot;0.00000000&quot;,&quot;rate&quot;:&quot;1.00000000&quot;,&quot;image&quot;:null,&quot;created_at&quot;:&quot;2024-02-02T15:56:12.000000Z&quot;,&quot;updated_at&quot;:&quot;2024-02-03T10:05:12.000000Z&quot;,&quot;method&quot;:{&quot;id&quot;:60,&quot;form_id&quot;:5,&quot;code&quot;:&quot;1001&quot;,&quot;name&quot;:&quot;Crypto Payment (ETHEREUM &amp; USDT ERC20)&quot;,&quot;alias&quot;:&quot;crypto_payment_(ethereum_&amp;_usdt_erc20)&quot;,&quot;status&quot;:true,&quot;supported_currencies&quot;:[],&quot;crypto&quot;:0,&quot;description&quot;:&quot;&lt;span style=\&quot;font-family: Montserrat, sans-serif;\&quot;&gt;&lt;font color=\&quot;#ffffff\&quot;&gt;Please Kindly Make Payment To This ETHEREUM &amp;amp;&amp;nbsp; USDT ERC20 Wallet Address:&amp;nbsp;&lt;\/font&gt;&lt;\/span&gt;&lt;font color=\&quot;#ffffff\&quot; face=\&quot;Montserrat, sans-serif\&quot;&gt;0x08b327880ea7792baa64e7a2d95003bb65ecf1a5&lt;\/font&gt;&lt;br&gt;&quot;,&quot;created_at&quot;:&quot;2024-02-02T15:56:12.000000Z&quot;,&quot;updated_at&quot;:&quot;2024-02-03T10:05:12.000000Z&quot;}}">Crypto Payment (ETHEREUM &amp; USDT ERC20)</option>
+                                                            </select>
                         </div>
-                    </div>
-                   
-                    <table class="table style-two table--responsive--lg">
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Transaction ID</th>
-                                <th>Amount</th>
-                                <th>Wallet</th>
-                                <th>Details</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody id="transactionContainer">
-                              
-                    </table>
-                                    </div>
+                        <div class="form-group">
+                            <label for="amount" class="form--label">Amount</label>
+                            <div class="input-group">
+                                <input type="number" step="any" name="amount" class="form-control form--control"
+                                    value="" id="amount" autocomplete="off" required>
+                                <span class="input-group-text bg--base">USD</span>
+                            </div>
+                        </div>
+                        <div class="mt-3 preview-details d-none">
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <span>Limit</span>
+                                    <span><span class="min fw-bold">0</span> USD - <span
+                                            class="max fw-bold">0</span> USD</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <span>Charge</span>
+                                    <span><span class="charge fw-bold">0</span> USD</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <span>Payable</span> <span><span class="payable fw-bold"> 0</span>
+                                        USD</span>
+                                </li>
+                                <li class="list-group-item justify-content-between d-none rate-element">
+
+                                </li>
+                                <li class="list-group-item justify-content-between d-none in-site-cur">
+                                    <span>In <span class="method_currency"></span></span>
+                                    <span class="final_amo fw-bold">0</span>
+                                </li>
+                                <li class="list-group-item justify-content-center crypto_currency d-none">
+                                    <span>Conversion with <span class="method_currency"></span>
+                                        and final value will Show on next step</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <button type="submit" class="btn btn--base w-100 mt-3">Submit</button>
+
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -202,8 +184,62 @@ long, short-term and conviction-led approach to investing.">
             <script>
         (function($) {
             "use strict";
-            $('.showFilterBtn').on('click', function() {
-                $('.responsive-filter-card').slideToggle();
+            $('select[name=gateway]').change(function() {
+                if (!$('select[name=gateway]').val()) {
+                    $('.preview-details').addClass('d-none');
+                    return false;
+                }
+                var resource = $('select[name=gateway] option:selected').data('gateway');
+                var fixed_charge = parseFloat(resource.fixed_charge);
+                var percent_charge = parseFloat(resource.percent_charge);
+                var rate = parseFloat(resource.rate)
+                if (resource.method.crypto == 1) {
+                    var toFixedDigit = 8;
+                    $('.crypto_currency').removeClass('d-none');
+                } else {
+                    var toFixedDigit = 2;
+                    $('.crypto_currency').addClass('d-none');
+                }
+                $('.min').text(parseFloat(resource.min_amount).toFixed(2));
+                $('.max').text(parseFloat(resource.max_amount).toFixed(2));
+                var amount = parseFloat($('input[name=amount]').val());
+                if (!amount) {
+                    amount = 0;
+                }
+                if (amount <= 0) {
+                    $('.preview-details').addClass('d-none');
+                    return false;
+                }
+                $('.preview-details').removeClass('d-none');
+                var charge = parseFloat(fixed_charge + (amount * percent_charge / 100)).toFixed(2);
+                $('.charge').text(charge);
+                var payable = parseFloat((parseFloat(amount) + parseFloat(charge))).toFixed(2);
+                $('.payable').text(payable);
+                var final_amo = (parseFloat((parseFloat(amount) + parseFloat(charge))) * rate).toFixed(
+                    toFixedDigit);
+                $('.final_amo').text(final_amo);
+                if (resource.currency != 'USD') {
+                    var rateElement =
+                        `<span class="fw-bold">Conversion Rate</span> <span><span  class="fw-bold">1 USD = <span class="rate">${rate}</span>  <span class="method_currency">${resource.currency}</span></span></span>`;
+                    $('.rate-element').html(rateElement)
+                    $('.rate-element').removeClass('d-none');
+                    $('.in-site-cur').removeClass('d-none');
+                    $('.rate-element').addClass('d-flex');
+                    $('.in-site-cur').addClass('d-flex');
+                } else {
+                    $('.rate-element').html('')
+                    $('.rate-element').addClass('d-none');
+                    $('.in-site-cur').addClass('d-none');
+                    $('.rate-element').removeClass('d-flex');
+                    $('.in-site-cur').removeClass('d-flex');
+                }
+                $('.method_currency').text(resource.currency);
+                $('input[name=currency]').val(resource.currency);
+                $('input[name=amount]').on('input');
+            });
+            $('input[name=amount]').on('input', function() {
+                $('select[name=gateway]').change();
+                $('.amount').text(parseFloat($(this).val()).toFixed(2));
             });
         })(jQuery);
     </script>
@@ -383,7 +419,7 @@ long, short-term and conviction-led approach to investing.">
     </script>
     <!--End of Tawk.to Script-->
     <script type="module" src="../front/public/js/routes/navbar.js"></script>
-    <script type="module" src="../front/public/js/routes/transactionHistory.js"></script>
+    <script type="module" src="../front/public/js/routes/transactions/startWithdraw.js"></script>
 </body>
 <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
