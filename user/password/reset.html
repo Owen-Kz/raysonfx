@@ -99,18 +99,13 @@ long, short-term and conviction-led approach to investing.">
                             <div class="mb-4">
                                 <p>To recover your account please provide your email or username to find your account.</p>
                             </div>
-                            <form method="POST" action="https://alphaforxyfe.com/user/password/email">
-                                <input type="hidden" name="_token" value="ITbyuJKWQX2cnTRIsjXHnlLvCanqfzAAI95O5ZNE">                                <div class="form-group">
-                                    <label>Email or Username</label>
-                                    <input type="text" class="form-control form--control" name="value"
-                                        value="" required autofocus="off">
+                            <form id="resetPasswordForm">
+                                            <div class="form-group">
+                        <label>Email or Username</label>
+                        <input type="text" class="form-control form--control" name="value"
+                             required autofocus="off" id="value">
                                 </div>
-                                <div class="form-group">
-        <div class="mb-2">
-            <link href="https://fonts.googleapis.com/css?family=Henny+Penny&amp;display=swap" rel="stylesheet"><div style="height: 46px; line-height: 46px; width:100%; text-align: center; background-color: #003; color: #EB4830; font-size: 26px; font-weight: bold; letter-spacing: 20px; font-family: 'Henny Penny', cursive;  -webkit-user-select: none; -moz-user-select: none;-ms-user-select: none;user-select: none;  display: flex; justify-content: center;"><span style="    float:left;     -webkit-transform: rotate(-56deg);">2</span><span style="    float:left;     -webkit-transform: rotate(-35deg);">8</span><span style="    float:left;     -webkit-transform: rotate(17deg);">2</span><span style="    float:left;     -webkit-transform: rotate(56deg);">4</span><span style="    float:left;     -webkit-transform: rotate(7deg);">7</span><span style="    float:left;     -webkit-transform: rotate(25deg);">6</span></div><input type="hidden" name="captcha_secret" value="0934a01503b6119b74c08ddddaa495347ddaab073cb4ece586ddb0f2952a88d4">        </div>
-        <label class="form-label">Captcha</label>
-        <input type="text" name="captcha" class="form-control form--control" required>
-    </div>
+          
                                 <div class="form-group">
                                     <button type="submit" class="btn btn--base w-100">Submit</button>
                                 </div>
@@ -295,6 +290,10 @@ long, short-term and conviction-led approach to investing.">
         })(jQuery);
     </script>
 <script src="../../../code.tidio.co_443/ul5qgbsv4aaw44cev9wh3hoyyxwmkqqa.js" async></script>
+
+<!-- RESET PASSWORD  -->
+<script type="module" src="../../front/public/js/routes/profile/resetPasword.js"></script>
+
 </body>
 <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">

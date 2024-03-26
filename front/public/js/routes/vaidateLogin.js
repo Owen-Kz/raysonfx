@@ -27,9 +27,12 @@ function ValidateLogin(){
                     AccountBalance = new Number(user.account_balance)
                     InterestEarned  = user.totalInterest
 
-                    user_fullnameContainer.innerText = `${userFullname}`
-                    user_emailContainer.innerText = `${userEmail}`
-                    userTHUMB.innerText = `${user.Intitials}`
+                    if(userTHUMB){
+                        user_fullnameContainer.innerText = `${userFullname}`
+                        user_emailContainer.innerText = `${userEmail}`
+                        userTHUMB.innerText = `${user.Intitials}`
+                    }
+                   
 
                     if(accountBalance){
 
