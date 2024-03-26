@@ -477,14 +477,14 @@
 
 .popup-content h2 {
     color: white;
-    font-size: 20px;
+    font-size: 15px;
     margin-right: 6px;
 }
 
 .popup-content p {
     color: coral;
     margin-top: 8px;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bolder;
 }
 

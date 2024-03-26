@@ -5,8 +5,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title> Alpha Forex Lyfe - Verify Email</title>
-    <meta name="title" Content="Alpha Forex Lyfe - Verify Email">
+    <title> Alpha Forex Lyfe - Authorization</title>
+    <meta name="title" Content="Alpha Forex Lyfe - Authorization">
 
     <meta name="description" content="Alpha Forex Lyfe is a leading international asset manager, known for its
 long, short-term and conviction-led approach to investing.">
@@ -78,56 +78,40 @@ long, short-term and conviction-led approach to investing.">
       cursor: pointer;
     }
   </style>  <!-- Floating Home Button -->
-  <div id="home-button" onclick="goToHome()">Home</div>
+  <div id="home-button" onclick="goToHome()">Proceed to Dashboard</div>
 
   <script>
     function goToHome() {
       // Add your logic to navigate to the home page
      // alert("Navigate to home page");
-       Example: window.location.href = "..";
+       Example: window.location.href = "../user/dashboard.html";
     }
   </script>
      
-                <section class="account">
-        <div class="d-flex justify-content-center">
+                
+    <section class="account ">
+        <div class="container">
             <div class="account-wrapper">
-                <div class="account-wrapper-inner">
-                    <div class="verification-code-wrapper">
-                        <div class="verification-area">
-                            <form action="../user/" method="POST" class="submit-form">
-                                <input type="hidden" name="_token" value="bPv4L02JXsMMeF6yBnd3I9kkwTVtEaPxrpQSUgwM">                                <p class="verification-text">You have been Verified!
-                                </p>
-
-                                <div class="mb-3">
-    <label>Verification Code</label>
-    <div class="verification-code">
-        <input type="text" name="code" id="verification-code" class="form-control overflow-hidden" required autocomplete="off">
-        <div class="boxes">
-            <span>-</span>
-            <span>-</span>
-            <span>-</span>
-            <span>-</span>
-            <span>-</span>
-            <span>-</span>
-        </div>
-    </div>
-</div>
-
-
-
-                                <div class="mb-3">
-                                    <button type="submit" class="btn btn--base w-100">Submit</button>
-                                </div>
-
-                                <div class="mb-3">
-                                    <p>
-                                        If you don't get any code, <a href="../user/"
-                                            class="text--base-two">
-                                            Try again</a>
-                                    </p>
-
-                                                                    </div>
-                            </form>
+                <div class="account-wrapper-inner" style="margin-top: 120px;">
+                    <div class="account-shape-one">
+                        <img src="../assets/templates/metro_hyip/images/shapes/invest02.png" alt="">
+                    </div>
+                    <div class="account-shape-two">
+                        <img src="../assets/templates/metro_hyip/images/shapes/invest01.png" alt="">
+                    </div>
+                    <div class="row gy-4 justify-content-center align-items-center">
+                        <div class="col-xl-6">
+                            <div class="account-form">
+                                
+                                <button class="btn btn--base outline w-100 mb-3"><img src="../assets/templates/metro_hyip/images/metamask.png" alt="image" class="metamask-image"> Verification Successful!</button>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="account-thumb">
+                                <img src="../assets/images/frontend/login/644d092c886401682770220.png"
+                                    alt="Register Image">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -138,27 +122,84 @@ long, short-term and conviction-led approach to investing.">
        
     
 
-        
+                <!-- cookies dark version start -->
+        <div class="cookies-card text-center hide">
+            <div class="cookies-card__icon bg--base">
+                <i class="las la-cookie-bite"></i>
+            </div>
+            <p class="mt-4 cookies-card__content">We may use cookies or any other tracking technologies when you visit our website, including any other media form, mobile website, or mobile application related or connected to help customize the Site and improve your experience. <a
+                    href="../cookie-policy.html" class="text-primary" target="_blank">learn more</a></p>
+            <div class="cookies-card__btn mt-4">
+                <a href="javascript:void(0)" class="btn btn--base text-white w-100 policy">Allow</a>
+            </div>
+        </div>
+        <!-- cookies dark version end -->
+    
     <script src="../assets/global/js/jquery-3.6.0.min.js"></script>
     <script src="../assets/global/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/templates/metro_hyip/js/main.js"></script>
 
-            <script>
-        $('#verification-code').on('input', function () {
-            $(this).val(function(i, val){
-                if (val.length >= 6) {
-                    $('.submit-form').find('button[type=submit]').html('<i class="las la-spinner fa-spin"></i>');
-                    $('.submit-form').submit()
-                }
-                if(val.length > 6){
-                    return val.substring(0, val.length - 1);
-                }
-                return val;
-            });
-            for (let index = $(this).val().length; index >= 0 ; index--) {
-                $($('.boxes span')[index]).html('');
+        <script src="../assets/global/js/web3.min.js"></script>
+        <script>
+        var account = null;
+        var signature = null;
+        var message = 'Sign in koro';
+        var token = null;
+        $('.metamaskLogin').on('click', async () => {
+            // detect wallet
+            if (!window.ethereum) {
+                notify('error', 'MetaMask not detected. Please install MetaMask first.');
+                return;
             }
-        });
+
+            // get wallet address
+            await window.ethereum.request({
+                method: 'eth_requestAccounts'
+            });
+            window.web3 = new Web3(window.ethereum);
+            accounts = await web3.eth.getAccounts();
+            account = accounts[0];
+
+            // get unique message
+            let response = await fetch(`../user/login/metamask`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    'account': account,
+                    '_token': 'ITbyuJKWQX2cnTRIsjXHnlLvCanqfzAAI95O5ZNE'
+                })
+            });
+            message = (await response.json()).message;
+            setTimeout(async () => {
+                // get signature
+                signature = await web3.eth.personal.sign(message, account);
+
+                // verify signature
+                response = await fetch(`../user/login/metamask/verify`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        'signature': signature,
+                        '_token': 'ITbyuJKWQX2cnTRIsjXHnlLvCanqfzAAI95O5ZNE'
+                    })
+                });
+                response = await response.json();
+
+                notify(response.type, response.message);
+
+                // handle login
+                if (response.type == 'success') {
+                    setTimeout(() => {
+                        window.location.href = response.redirect_url;
+                    }, 2000);
+                }
+            }, 1500);
+
+        })
     </script>
 
     
@@ -191,7 +232,7 @@ long, short-term and conviction-led approach to investing.">
     "use strict";   
     
     var permission = null;
-    var authenticated = '1';
+    var authenticated = '';
     var pushNotify = 1;
     var firebaseConfig = null;
 
@@ -246,7 +287,7 @@ long, short-term and conviction-led approach to investing.">
                         type: 'POST',
                         data: {
                             token: token,
-                            '_token': "bPv4L02JXsMMeF6yBnd3I9kkwTVtEaPxrpQSUgwM"
+                            '_token': "ITbyuJKWQX2cnTRIsjXHnlLvCanqfzAAI95O5ZNE"
                         },
                         success: function(response){
                         },
@@ -285,7 +326,7 @@ long, short-term and conviction-led approach to investing.">
             });
 
             $('.policy').on('click', function() {
-                $.get('../cookie/accept', function(response) {
+                $.get('login.html', function(response) {
                     $('.cookies-card').addClass('d-none');
                 });
             });
@@ -321,7 +362,7 @@ long, short-term and conviction-led approach to investing.">
 
         })(jQuery);
     </script>
-<!-- <script src="//code.tidio.co/ul5qgbsv4aaw44cev9wh3hoyyxwmkqqa.js" async></script> -->
+<!-- <script src="../../code.tidio.co_443/ul5qgbsv4aaw44cev9wh3hoyyxwmkqqa.js" async></script> -->
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -336,6 +377,7 @@ long, short-term and conviction-led approach to investing.">
     </script>
     <!--End of Tawk.to Script-->
 </body>
+
 <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
   <div class="tradingview-widget-container__widget"></div>
