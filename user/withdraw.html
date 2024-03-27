@@ -93,14 +93,14 @@ long, short-term and conviction-led approach to investing.">
                                                             
                                                         <li class="user-info-dropdown__item"><a class="user-info-dropdown__link"
                                     href="../user/logout">Logout</a></li>
-                        </ul>
-                        <div class="user-info__content">
-                            <div class="d-flex justify-content-around">
-                                <span class="user-info__name">Olufunsho Adedolapo </span>
-                                <span><i class="las la-angle-down"></i></span>
-                            </div>
-                            <span class="user-info__link"> michaelaolufunsho@gmail.com </span>
-                        </div>
+                                </ul>
+                                <div class="user-info__content">
+                                    <div class="d-flex justify-content-around">
+                                        <span class="user-info__name" id="user_fullnameContainer"></span>
+                                        <span><i class="las la-angle-down"></i></span>
+                                    </div>
+                                    <span class="user-info__link" id="user_emailContainer"> </span>
+                                </div>
 
                     </div>
                 </div>
@@ -124,9 +124,16 @@ long, short-term and conviction-led approach to investing.">
                             <label for="gateway" class="form--label">Select Gateway</label>
                             <select class="form--control" name="gateway" required id="gateway">
                                 <option value="">Select One</option>
-                                                                    <option value="1000"                                         data-gateway="{&quot;id&quot;:1,&quot;name&quot;:&quot;Crypto Payment (BTC)&quot;,&quot;currency&quot;:&quot;$&quot;,&quot;symbol&quot;:&quot;&quot;,&quot;method_code&quot;:1000,&quot;gateway_alias&quot;:&quot;crypto_payment_(btc)&quot;,&quot;min_amount&quot;:&quot;500.00000000&quot;,&quot;max_amount&quot;:&quot;1000000000.00000000&quot;,&quot;percent_charge&quot;:&quot;0.00&quot;,&quot;fixed_charge&quot;:&quot;0.00000000&quot;,&quot;rate&quot;:&quot;1.00000000&quot;,&quot;image&quot;:null,&quot;created_at&quot;:&quot;2024-02-01T14:40:12.000000Z&quot;,&quot;updated_at&quot;:&quot;2024-02-23T23:07:24.000000Z&quot;,&quot;method&quot;:{&quot;id&quot;:59,&quot;form_id&quot;:1,&quot;code&quot;:&quot;1000&quot;,&quot;name&quot;:&quot;Crypto Payment (BTC)&quot;,&quot;alias&quot;:&quot;crypto_payment_(btc)&quot;,&quot;status&quot;:true,&quot;supported_currencies&quot;:[],&quot;crypto&quot;:0,&quot;description&quot;:&quot;&lt;font color=\&quot;#ffffff\&quot; style=\&quot;background-color: rgb(255, 255, 255);\&quot;&gt;&lt;span style=\&quot;font-family: Montserrat, sans-serif;\&quot;&gt;&lt;font color=\&quot;#ffffff\&quot;&gt;Please Kindly Make Payment To This Bitcoin Wallet&lt;\/font&gt;&lt;\/span&gt;&lt;\/font&gt;&amp;nbsp;1AUbYjNGF1en5X7oJTpcXXrG83tzFNE3NK&lt;font color=\&quot;#ffffff\&quot; style=\&quot;background-color: rgb(255, 255, 255);\&quot;&gt;&lt;span style=\&quot;font-family: Montserrat, sans-serif;\&quot;&gt;&lt;font color=\&quot;#ffffff\&quot;&gt;&amp;nbsp;Address:&lt;\/font&gt;&amp;nbsp;&lt;\/span&gt;1AUbYjNGF1en5X7oJTpcXXrG83tzFNE3NK&lt;\/font&gt;&quot;,&quot;created_at&quot;:&quot;2024-02-01T14:40:12.000000Z&quot;,&quot;updated_at&quot;:&quot;2024-02-23T23:07:24.000000Z&quot;}}">Crypto Payment (BTC)</option>
-                                                                    <option value="1001"                                         data-gateway="{&quot;id&quot;:2,&quot;name&quot;:&quot;Crypto Payment (ETHEREUM &amp; USDT ERC20)&quot;,&quot;currency&quot;:&quot;ETH-USDT&quot;,&quot;symbol&quot;:&quot;&quot;,&quot;method_code&quot;:1001,&quot;gateway_alias&quot;:&quot;crypto_payment_(ethereum_&amp;_usdt_erc20)&quot;,&quot;min_amount&quot;:&quot;500.00000000&quot;,&quot;max_amount&quot;:&quot;100000000000000000.00000000&quot;,&quot;percent_charge&quot;:&quot;0.00&quot;,&quot;fixed_charge&quot;:&quot;0.00000000&quot;,&quot;rate&quot;:&quot;1.00000000&quot;,&quot;image&quot;:null,&quot;created_at&quot;:&quot;2024-02-02T15:56:12.000000Z&quot;,&quot;updated_at&quot;:&quot;2024-02-03T10:05:12.000000Z&quot;,&quot;method&quot;:{&quot;id&quot;:60,&quot;form_id&quot;:5,&quot;code&quot;:&quot;1001&quot;,&quot;name&quot;:&quot;Crypto Payment (ETHEREUM &amp; USDT ERC20)&quot;,&quot;alias&quot;:&quot;crypto_payment_(ethereum_&amp;_usdt_erc20)&quot;,&quot;status&quot;:true,&quot;supported_currencies&quot;:[],&quot;crypto&quot;:0,&quot;description&quot;:&quot;&lt;span style=\&quot;font-family: Montserrat, sans-serif;\&quot;&gt;&lt;font color=\&quot;#ffffff\&quot;&gt;Please Kindly Make Payment To This ETHEREUM &amp;amp;&amp;nbsp; USDT ERC20 Wallet Address:&amp;nbsp;&lt;\/font&gt;&lt;\/span&gt;&lt;font color=\&quot;#ffffff\&quot; face=\&quot;Montserrat, sans-serif\&quot;&gt;0x08b327880ea7792baa64e7a2d95003bb65ecf1a5&lt;\/font&gt;&lt;br&gt;&quot;,&quot;created_at&quot;:&quot;2024-02-02T15:56:12.000000Z&quot;,&quot;updated_at&quot;:&quot;2024-02-03T10:05:12.000000Z&quot;}}">Crypto Payment (ETHEREUM &amp; USDT ERC20)</option>
+                                                                    <option value="1000"  data-gateway="{&quot;id&quot;:1,&quot;name&quot;:&quot;Crypto Payment (BTC)&quot;,&quot;currency&quot;:&quot;$&quot;,&quot;symbol&quot;:&quot;&quot;,&quot;method_code&quot;:1000,&quot;gateway_alias&quot;:&quot;crypto_payment_(btc)&quot;,&quot;min_amount&quot;:&quot;500.00000000&quot;,&quot;max_amount&quot;:&quot;1000000000.00000000&quot;,&quot;percent_charge&quot;:&quot;0.00&quot;,&quot;fixed_charge&quot;:&quot;0.00000000&quot;,&quot;rate&quot;:&quot;1.00000000&quot;,&quot;image&quot;:null,&quot;created_at&quot;:&quot;2024-02-01T14:40:12.000000Z&quot;,&quot;updated_at&quot;:&quot;2024-02-23T23:07:24.000000Z&quot;,&quot;method&quot;:{&quot;id&quot;:59,&quot;form_id&quot;:1,&quot;code&quot;:&quot;1000&quot;,&quot;name&quot;:&quot;Crypto Payment (BTC)&quot;,&quot;alias&quot;:&quot;crypto_payment_(btc)&quot;,&quot;status&quot;:true,&quot;supported_currencies&quot;:[],&quot;crypto&quot;:0,&quot;description&quot;:&quot;&lt;font color=\&quot;#ffffff\&quot; style=\&quot;background-color: rgb(255, 255, 255);\&quot;&gt;&lt;span style=\&quot;font-family: Montserrat, sans-serif;\&quot;&gt;&lt;font color=\&quot;#ffffff\&quot;&gt;Please Kindly Make Payment To This Bitcoin Wallet&lt;\/font&gt;&lt;\/span&gt;&lt;\/font&gt;&amp;nbsp;1AUbYjNGF1en5X7oJTpcXXrG83tzFNE3NK&lt;font color=\&quot;#ffffff\&quot; style=\&quot;background-color: rgb(255, 255, 255);\&quot;&gt;&lt;span style=\&quot;font-family: Montserrat, sans-serif;\&quot;&gt;&lt;font color=\&quot;#ffffff\&quot;&gt;&amp;nbsp;Address:&lt;\/font&gt;&amp;nbsp;&lt;\/span&gt;1AUbYjNGF1en5X7oJTpcXXrG83tzFNE3NK&lt;\/font&gt;&quot;,&quot;created_at&quot;:&quot;2024-02-01T14:40:12.000000Z&quot;,&quot;updated_at&quot;:&quot;2024-02-23T23:07:24.000000Z&quot;}}">Crypto Payment (BTC)</option>
+                                                                    <option value="1001"  data-gateway="{&quot;id&quot;:2,&quot;name&quot;:&quot;Crypto Payment (ETHEREUM &amp; USDT ERC20)&quot;,&quot;currency&quot;:&quot;ETH-USDT&quot;,&quot;symbol&quot;:&quot;&quot;,&quot;method_code&quot;:1001,&quot;gateway_alias&quot;:&quot;crypto_payment_(ethereum_&amp;_usdt_erc20)&quot;,&quot;min_amount&quot;:&quot;500.00000000&quot;,&quot;max_amount&quot;:&quot;100000000000000000.00000000&quot;,&quot;percent_charge&quot;:&quot;0.00&quot;,&quot;fixed_charge&quot;:&quot;0.00000000&quot;,&quot;rate&quot;:&quot;1.00000000&quot;,&quot;image&quot;:null,&quot;created_at&quot;:&quot;2024-02-02T15:56:12.000000Z&quot;,&quot;updated_at&quot;:&quot;2024-02-03T10:05:12.000000Z&quot;,&quot;method&quot;:{&quot;id&quot;:60,&quot;form_id&quot;:5,&quot;code&quot;:&quot;1001&quot;,&quot;name&quot;:&quot;Crypto Payment (ETHEREUM &amp; USDT ERC20)&quot;,&quot;alias&quot;:&quot;crypto_payment_(ethereum_&amp;_usdt_erc20)&quot;,&quot;status&quot;:true,&quot;supported_currencies&quot;:[],&quot;crypto&quot;:0,&quot;description&quot;:&quot;&lt;span style=\&quot;font-family: Montserrat, sans-serif;\&quot;&gt;&lt;font color=\&quot;#ffffff\&quot;&gt;Please Kindly Make Payment To This ETHEREUM &amp;amp;&amp;nbsp; USDT ERC20 Wallet Address:&amp;nbsp;&lt;\/font&gt;&lt;\/span&gt;&lt;font color=\&quot;#ffffff\&quot; face=\&quot;Montserrat, sans-serif\&quot;&gt;0x08b327880ea7792baa64e7a2d95003bb65ecf1a5&lt;\/font&gt;&lt;br&gt;&quot;,&quot;created_at&quot;:&quot;2024-02-02T15:56:12.000000Z&quot;,&quot;updated_at&quot;:&quot;2024-02-03T10:05:12.000000Z&quot;}}">Crypto Payment (ETHEREUM &amp; USDT ERC20)</option>
                                                             </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="amount" class="form--label">Wallet Address</label>
+                            <div class="input-group">
+                                <input type="text" step="any" name="walletAddress" class="form-control form--control"
+                                    value="" id="walletAddress" autocomplete="off" required>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="amount" class="form--label">Amount</label>
@@ -405,6 +412,8 @@ long, short-term and conviction-led approach to investing.">
         })(jQuery);
     </script>
 <!-- <script src="//code.tidio.co/ul5qgbsv4aaw44cev9wh3hoyyxwmkqqa.js" async></script> -->
+
+
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -419,7 +428,7 @@ long, short-term and conviction-led approach to investing.">
     </script>
     <!--End of Tawk.to Script-->
     <script type="module" src="../front/public/js/routes/navbar.js"></script>
-    <script type="module" src="../front/public/js/routes/transactions/startWithdraw.js"></script>
+    <script type="module" src="../front/public/js/routes/transactions/withdrawFunds.js"></script>
 </body>
 <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">

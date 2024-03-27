@@ -1,8 +1,10 @@
-import { ENDPOINT, parentDirectoryName } from "./constants.js";
+import { ENDPOINT, getURL, parentDirectoryName } from "./constants.js";
+import { CreatNavigation} from "./navbar.js";
+import { updateSettings } from "./profile/settings.js";
 import { GetCookie } from "./setCookies.js";
 
 const userID = GetCookie("u_id")
-let userEmail, userFullname, userName, AccountBalance, InterestEarned
+let userEmail, userFullname, userName, AccountBalance, InterestEarned, firstname, lastname, zip, country, state, address, city, phonenumber
 
 const accountBalance = document.getElementById("accountBalance")
 const userTHUMB = document.querySelector(".user-info__thumb")
@@ -27,6 +29,17 @@ function ValidateLogin(){
                     AccountBalance = new Number(user.account_balance)
                     InterestEarned  = user.totalInterest
 
+                    firstname = user.firstname
+                    lastname = user.lastname
+                    zip = user.zip
+                    country = user.country
+                    state = user.state 
+                    city = user.city 
+                    phonenumber = user.phonenumber
+                    address = user.address
+                    
+
+
                     if(userTHUMB){
                         user_fullnameContainer.innerText = `${userFullname}`
                         user_emailContainer.innerText = `${userEmail}`
@@ -48,7 +61,12 @@ function ValidateLogin(){
                             emptyBalance.remove()
                         }
                     }
-                    
+                    CreatNavigation(AccountBalance.toFixed(2), new Number(InterestEarned).toFixed(2))
+
+                    if(getURL() === `${parentDirectoryName}/user/profile-setting.html`){
+                        updateSettings(firstname, lastname, address, state, zip, city, country, phonenumber, userEmail, userName)
+                    }
+
                 }else{
                     alert("An Error Occured")
                     console.log(data.message)

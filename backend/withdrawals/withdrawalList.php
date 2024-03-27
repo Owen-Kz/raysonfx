@@ -1,6 +1,6 @@
-<?php
+<?php 
 
-include "../db.php";
+include '../db.php';
 
 session_start();
 
@@ -30,7 +30,7 @@ if(isset($userId)){
         $username = $row["username"];
         $accountBalance = $row["current_balance"];
 
-        $stmt = $con->prepare("SELECT SUM(`amount`) AS `totalpending` FROM `transactions` WHERE `username` = ? AND `type` = 'interest' AND `status` = 'pending'");
+        $stmt = $con->prepare("SELECT * FROM `withdrawals` WHERE `user_id` = ? ");
         $stmt->bind_param("s", $username);
         
         if($stmt->execute()){
@@ -40,28 +40,27 @@ if(isset($userId)){
         $count = mysqli_num_rows($run_query);
     
         if($count > 0){
-            $transactionsList = array(); // Initialize an array to store all transactions
+            $withdrawalsList = array(); // Initialize an array to store all withdrawals
 
-        if ($row = $result->fetch_assoc()) {
-            $pending = $row["totalpending"];
-            // Loop through each row in the result set and append it to the transactionsList array
-
-            $response = array('status' => 'success', 'message' => 'pending Interest Transaction History', 'pending' => $pending);
-            echo json_encode($response);
+        while ($row = $result->fetch_assoc()) {
+            // Loop through each row in the result set and append it to the withdrawalsList array
+            // $withdrawalsList[] =  $row;
+            $withdrawalsList[] = array("withdrawalId" => md5($row['id']), "withdrawalDetails" => $row);
         }
    
-    
+        $response = array('status' => 'success', 'message' => ' History', 'withdrawalHistory' => $withdrawalsList);
+        echo json_encode($response);
     }
     
     }
     else {
-        $response = array('status' => 'error', 'message' => 'No Interest Transaction Found', 'pending' => '0');
+        $response = array('status' => 'error', 'message' => 'No withdrawal Found', 'withdrawalHistory' => '[]');
         echo json_encode($response);
     }
     
 }else{
    
-    $response = array('status' => 'error', 'message' => "Error: " . $stmt->error, 'pending' => '0');
+    $response = array('status' => 'error', 'message' => "Error: " . $stmt->error, 'withdrawalHistory' => '[]');
     echo json_encode($response);
 }
 }

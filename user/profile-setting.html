@@ -96,10 +96,10 @@ long, short-term and conviction-led approach to investing.">
                         </ul>
                         <div class="user-info__content">
                             <div class="d-flex justify-content-around">
-                                <span class="user-info__name">Olufunsho Adedolapo </span>
+                                <span class="user-info__name" id="user_fullnameContainer"></span>
                                 <span><i class="las la-angle-down"></i></span>
                             </div>
-                            <span class="user-info__link"> michaelaolufunsho@gmail.com </span>
+                            <span class="user-info__link" id="user_emailContainer"> </span>
                         </div>
 
                     </div>
@@ -124,19 +124,19 @@ long, short-term and conviction-led approach to investing.">
                             <ul class="list-group">
 
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <span><i class="las la-user base--color"></i> Username</span> <span class="fw-bold">namu_helll</span>
+                                    <span><i class="las la-user base--color"></i> Username</span> <span class="fw-bold" id="username"></span>
                                 </li>
 
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <span><i class="las la-envelope base--color"></i> Email</span> <span class="fw-bold">michaelaolufunsho@gmail.com</span>
+                                    <span><i class="las la-envelope base--color"></i> Email</span> <span class="fw-bold" id="email"></span>
                                 </li>
 
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <span><i class="las la-phone base--color"></i> Mobile</span> <span class="fw-bold">2349061329606</span>
+                                    <span><i class="las la-phone base--color"></i> Mobile</span> <span class="fw-bold" id="phonenumber"></span>
                                 </li>
 
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <span><i class="las la-globe base--color"></i> Country</span> <span class="fw-bold">Nigeria</span>
+                                    <span><i class="las la-globe base--color"></i> Country</span> <span class="fw-bold" id="country">Nigeria</span>
                                 </li>
 
                             </ul>
@@ -146,25 +146,25 @@ long, short-term and conviction-led approach to investing.">
                 <div class="col-lg-8">
                     <div class="card custom--card">
                         <div class="card-body">
-                            <form class="register" action="" method="post">
+                            <form id="updateDataForm">
                                 <input type="hidden" name="_token" value="UwTgYxR3NAsG1dREYpqBeG6VHjaeeakT41aJq9rU">                                <div class="row">
                                     <div class="form-group col-sm-6">
                                         <label class="form--label">First Name</label>
-                                        <input type="text" class="form--control" name="firstname" value="Olufunsho" required>
+                                        <input type="text" class="form--control" id="firstname"  required>
                                     </div>
                                     <div class="form-group col-sm-6">
                                         <label class="form--label">Last Name</label>
-                                        <input type="text" class="form--control" name="lastname" value="Adedolapo" required>
+                                        <input type="text" class="form--control" id="lastname" required>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-sm-6">
                                         <label class="form--label">Address</label>
-                                        <input type="text" class="form--control" name="address" value="27, Biaduo Street">
+                                        <input type="text" class="form--control" id="address" >
                                     </div>
                                     <div class="form-group col-sm-6">
                                         <label class="form--label">State</label>
-                                        <input type="text" class="form--control" name="state" value="Lagos">
+                                        <input type="text" class="form--control" id="state">
                                     </div>
                                 </div>
 
@@ -172,12 +172,12 @@ long, short-term and conviction-led approach to investing.">
                                 <div class="row">
                                     <div class="form-group col-sm-6">
                                         <label class="form--label">Zip Code</label>
-                                        <input type="text" class="form--control" name="zip" value="106104">
+                                        <input type="text" class="form--control" id="zip" >
                                     </div>
 
                                     <div class="form-group col-sm-6">
                                         <label class="form--label">City</label>
-                                        <input type="text" class="form--control" name="city" value="Lagos">
+                                        <input type="text" class="form--control" id="city" >
                                     </div>
                                 </div>
 
@@ -226,7 +226,7 @@ long, short-term and conviction-led approach to investing.">
 </script>
 
     <script src="../assets/global/js/firebase/firebase-8.3.2.js"></script>
-
+    <script type="module" src="../front/public/js/routes/profile/settings.js"></script>
 <script>
     "use strict";   
     
