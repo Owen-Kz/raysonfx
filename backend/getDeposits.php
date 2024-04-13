@@ -1,6 +1,6 @@
-<?php
+<?php 
 
-include "../db.php";
+include 'db.php';
 
 session_start();
 
@@ -30,7 +30,7 @@ if(isset($userId)){
         $username = $row["username"];
         $accountBalance = $row["current_balance"];
 
-        $stmt = $con->prepare("SELECT `amount` FROM `transactions` WHERE `username` = ? AND `type` = 'Interest' AND `status` = 'completed' ORDER BY `date` DESC LIMIT 1");
+        $stmt = $con->prepare("SELECT * FROM `transactions` WHERE `username` = ? AND `type` = 'depositWalletCredit' OR `type` = 'deposit'");
         $stmt->bind_param("s", $username);
         
         if($stmt->execute()){
@@ -42,33 +42,25 @@ if(isset($userId)){
         if($count > 0){
             $transactionsList = array(); // Initialize an array to store all transactions
 
-        if ($row = mysqli_fetch_array($result)) {
-            $last = $row["amount"];
+        while ($row = $result->fetch_assoc()) {
             // Loop through each row in the result set and append it to the transactionsList array
-
-            $response = array('status' => 'success', 'message' => 'last Interest Transaction History', 'last' => $last);
-            echo json_encode($response);
-        }   else {
-            $response = array('status' => 'error', 'message' => 'No Interest Transaction Found', 'last' => '0');
-            echo json_encode($response);
-        }   
+            // $transactionsList[] =  $row;
+            $transactionsList[] = array("transactionId" => md5($row['id']), "transactionDetails" => $row);
+        }
    
-    
-    }   else {
-        $response = array('status' => 'error', 'message' => 'No Interest Transaction Found', 'last' => '0');
+        $response = array('status' => 'success', 'message' => 'Transaction History', 'TransactionHistory' => $transactionsList);
         echo json_encode($response);
     }
     
-    
     }
     else {
-        $response = array('status' => 'error', 'message' => 'No Interest Transaction Found', 'last' => '0');
+        $response = array('status' => 'error', 'message' => 'No Transaction Found', 'TransactionHistory' => '[]');
         echo json_encode($response);
     }
     
 }else{
    
-    $response = array('status' => 'error', 'message' => "Error: " . $stmt->error, 'last' => '0');
+    $response = array('status' => 'error', 'message' => "Error: " . $stmt->error, 'TransactionHistory' => '[]');
     echo json_encode($response);
 }
 }

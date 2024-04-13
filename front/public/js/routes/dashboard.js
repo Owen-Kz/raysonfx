@@ -1,14 +1,20 @@
 import { ENDPOINT, parentDirectoryName } from "./constants.js";
 import { GetCookie } from "./setCookies.js";
+import { calculatePercentage } from "./transactions/calculateinvestment.js";
 import { getTransactions } from "./transactions/getTranscations.js";
 import { ValidateLogin } from "./vaidateLogin.js";
 
-ValidateLogin()
+// ValidateLogin()
 const uid = GetCookie("u_id")
 
 const RecentTRansactions = getTransactions(uid)
 
 GetBalancesAndHistory(uid)
+
+
+// Example usage
+calculatePercentage(100, 10, 5); // Replace with your desired values
+
 
 function GetBalancesAndHistory(user_id){
     const PendingDeposit = document.getElementById("pending_deposit")

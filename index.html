@@ -1007,55 +1007,7 @@ long, short-term and conviction-led approach to investing.">
 	<button id="scroll-top" class="scroll-to-top"><i class="fas fa-chevron-up"></i></button>
 </div>
 
-<script>
-	// Sample data of withdrawals (username and amount)
-const withdrawals = [
-    { username: "Gregory McDamon", amount: generateRandomPrice(), transType: "Withdrawn" },
-    { username: "Annabelle Willson", amount: generateRandomPrice(),  transType: "Deposited" },
-    { username: "Steven Hathaway", amount: generateRandomPrice(),  transType: "Withdrawn" },
-    // Add more withdrawal data as needed
-];
-
-async function generateRandomPrice() {
-    // Generate a random number between 0 and 1
-    const randomFraction = Math.random();
-    
-    // Scale the random number to the range 200 to 1000
-    const randomPrice = 200 + randomFraction * (1000 - 200);
-    
-    // Round the result to get an integer value
-    return Math.round(randomPrice);
-}
-
-// usage:
-// const randomPrice = generateRandomPrice();
-
-let currentIndex = 0;
-
-// Function to display the next withdrawal
-const popupContent = document.getElementById("popupContent");
-
-async function showNextWithdrawal() {
-	
-    if (currentIndex >= withdrawals.length) {
-        currentIndex = 0; // Reset index if reached end
-    }
-	const AMOUNT = await generateRandomPrice()
-
-    const withdrawal = withdrawals[currentIndex];
-   
-    popupContent.innerHTML = `<h2>${withdrawal.username} ${withdrawal.transType}: </h2><p>$${AMOUNT} USD</p>`;
-    
-    // Increment index for the next withdrawal
-    currentIndex++;
-}
-
-// Show the first withdrawal
-// showNextWithdrawal();
-
-// Continuous display of withdrawals
-setInterval(showNextWithdrawal,3100); // Change the interval time as needed
-</script>
+<script type="module" src="./front/public/js/routes/notifyNames.js"></script>
 
 <!-- jQuery Lib -->
 <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="front/public/js/vendor/jquery-1.12.4.min.js"></script>
