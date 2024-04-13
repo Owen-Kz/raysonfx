@@ -23,8 +23,8 @@
     --heading-color: var(--white);
     --body-color: var(--light);
     --border-color: 0 0% 88%;
-    --body-background: 242 63% 12%;
-    --section-bg: 240 55% 17%;
+    --body-background: 262 30% 30%;
+    --section-bg: 262 30% 30%;
     /* ================================ Box Shadow Start =============================== */
     --header-box-shadow: 0px -1px 15px 3px hsl(var(--black) /.3);
     --mobile-box-shadow: 0px -1px 5px 0px hsl(var(--black) /.92);
