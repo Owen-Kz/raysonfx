@@ -23,8 +23,8 @@
     --heading-color: var(--white);
     --body-color: var(--light);
     --border-color: 0 0% 88%;
-    --body-background: 262 30% 30%;
-    --section-bg: 262 30% 30%;
+    --body-background: 0 0% 20%;
+    --section-bg: 0 0% 10%;
     /* ================================ Box Shadow Start =============================== */
     --header-box-shadow: 0px -1px 15px 3px hsl(var(--black) /.3);
     --mobile-box-shadow: 0px -1px 5px 0px hsl(var(--black) /.92);
@@ -45,7 +45,7 @@
     --dashboard-five: linear-gradient(185.41deg, #F456A4 29.7%, #E90475 65%);
     /*============= dashboard gradient background color =========== */
     /* ========================= Base Color ============================= */
-    --base-h: 258;
+    --base-h: 558;
 
     --base-s: 97%;
 
