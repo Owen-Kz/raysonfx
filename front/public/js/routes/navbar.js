@@ -193,7 +193,7 @@ const navItems  = `  <span class="sidebar-menu__close d-xl-none d-block"><i clas
         <div class="row gy-3">
             <div class="col-md-12 text-center">
                 <div class="bottom-footer-text text-white"> &copy; 2024
-                    <a href="${parentDirectoryName}">Alpha Forex Lyfe</a> All Rights Reserved.
+                    <a href="${parentDirectoryName}">Rayson Finance</a> All Rights Reserved.
                 </div>
             </div>
         </div>

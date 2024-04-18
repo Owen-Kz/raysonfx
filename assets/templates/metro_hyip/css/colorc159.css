@@ -1,10 +1,9 @@
-
 :root{
---base-h: 8;
---base-s: 82%;
---base-l: 55%;
-
---base-two-h: 8;
---base-two-s: 51%;
---base-two-l: 65%;
-}
+    --base-h: 28;
+    --base-s: 100%;
+    --base-l: 50%;
+    
+    --base-two-h: 34;
+    --base-two-s: 100%;
+    --base-two-l: 50%;
+    }

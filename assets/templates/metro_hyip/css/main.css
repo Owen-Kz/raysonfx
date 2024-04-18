@@ -45,11 +45,11 @@
     --dashboard-five: linear-gradient(185.41deg, #F456A4 29.7%, #E90475 65%);
     /*============= dashboard gradient background color =========== */
     /* ========================= Base Color ============================= */
-    --base-h: 558;
+    --base-h: 28;
+    --base-s: 100%;
+    --base-l: 50%;
+    
 
-    --base-s: 97%;
-
-    --base-l: 35%;
 
     --base: var(--base-h) var(--base-s) var(--base-l);
     /* Base darken */
@@ -75,9 +75,12 @@
     --base-l-800: var(--base-h) calc(var(--base-s)) calc(var(--base-l) + (100% - var(--base-l)) * 0.8);
     --base-l-900: var(--base-h) calc(var(--base-s)) calc(var(--base-l) + (100% - var(--base-l)) * 0.9);
     /* ========================= Base Two Color =============================  */
-    --base-two-h: 258;
+    /* --base-two-h: 258;
     --base-two-s: 66%;
-    --base-two-l: 45%;
+    --base-two-l: 45%; */
+    --base-two-h: 34;
+    --base-two-s: 100%;
+    --base-two-l: 50%;
     --base-two: var(--base-two-h) var(--base-two-s) var(--base-two-l);
 
     /* Base Two Darken */
@@ -1610,7 +1613,7 @@ button:focus {
     top: 2px;
     bottom: -2px;
     right: -2px;
-    background: #141443 !important;
+    background: #161616 !important;
     z-index: -1;
     border-radius: inherit;
 }

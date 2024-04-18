@@ -254,12 +254,12 @@
 }
 
 .verification-code-wrapper {
-  border: 1px solid #141443 !important;
-  background-color: #141443 !important;
+  border: 1px solid #161616 !important;
+  background-color: #161616 !important;
 }
 
 .verification-code::after {
-  background-color: #141443 !important;
+  background-color: #161616 !important;
 }
 
 .verification-code input:focus {
