@@ -6,7 +6,7 @@ const lastNames = ["Smith", "Johnson", "Williams", "Jones", "Brown", "Davis", "M
 const generatedNames = [];
 
 // Function to generate a random full name
-function names() {
+async function names() {
   const firstName = firstNames[Math.floor(Math.random() * firstNames.length)];
   const lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
   const fullName = `${firstName} ${lastName}`;

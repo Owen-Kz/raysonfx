@@ -465,9 +465,12 @@
     padding: 0px;
     font-size: 20px;
     text-align: center;
-    animation: slideUp 3s ease-in-out infinite; /* Adjust animation duration as needed */
+    /* animation: slideUp 4s ease-in-out infinite; Adjust animation duration as needed */
     display: flex;
+    transition: transform 1s; /* Transition duration of 1 second */
+    transform: translateY(100%); /* Start below the screen (adjust this to your needs) */
     justify-content: center;
+    bottom: 0;
     align-items: center;
 }
 
@@ -475,8 +478,14 @@
     0% {
         transform: translateY(100%);
     }
+    50%{
+        transform: translateY(0)
+    }
+    60%{
+        transform: translateY(0)
+    }
     100% {
-        transform: translateY(0);
+        transform: translateY(-100%);
     }
 }
 
