@@ -5,34 +5,19 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title> Rayson Finance - Dashboard</title>
-    <meta name="title" Content="Rayson Finance - Dashboard">
+    <title> Rayson Finance - Settings</title>
+    <meta name="title" Content="Rayson Finance - Settings">
 
-    <meta name="description" content="Rayson Finance is a leading international asset manager, known for its
-long, short-term and conviction-led approach to investing.">
+
     <meta name="keywords" content="bitcoin,investment,Rayson Finance,forex,company">
     <link rel="shortcut icon" href="../../assets/images/logoIcon/favicon.png" type="image/x-icon">
 
     
     <link rel="apple-touch-icon" href="../../assets/images/logoIcon/logo.png">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Rayson Finance - Dashboard">
+
     
-    <meta itemprop="name" content="Rayson Finance - Dashboard">
-    <meta itemprop="description" content="Rayson Finance is a leading international asset manager, known for its
-long, short-term and conviction-led approach to investing.">
+
     <meta itemprop="image" content="../../assets/images/seo/65be1258275121706955344.png">
-    
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Rayson Finance">
-    <meta property="og:description" content="Rayson Finance is a leading international asset manager, known for its
-long, short-term and conviction-led approach to investing.">
-    <meta property="og:image" content="../../assets/images/seo/65be1258275121706955344.png"/>
-    <meta property="og:image:type" content="png"/>
-    <meta property="og:image:width" content="1180" />
-    <meta property="og:image:height" content="600" />
-    <meta property="og:url" content="/user/dashboard.html">
     
     <meta name="twitter:card" content="summary_large_image">
     <!-- Bootstrap CSS -->
@@ -76,37 +61,11 @@ long, short-term and conviction-led approach to investing.">
     <div class="dashboard-header__inner">
         
         <div class="dashboard-header__left">
-            <a href="../../index.html" class="sidebar-logo__link"> <img src="../../assets/images/logoIcon/logo.png" alt="site-logo"></a>
-            <h4 class="dashboard-header__left-title" style="margin-left: 20px;"> Dashboard </h4>
+            <a href="#" class="sidebar-logo__link"> <img src="../../assets/images/logoIcon/logo.png" alt="site-logo"></a>
         </div>
         <div class="dashboard-header__right">
-            <div class="user-info">
-                <div class="user-info__button">
-                    <div class="user-info__info">
-                        
-                        <span class="user-info__thumb">
-                            
-                        </span>
-
-                        <ul class="user-info-dropdown">
-                            <li class="user-info-dropdown__item"><a class="user-info-dropdown__link"
-                                    href="../../user/profile-setting.html">Profile Setting</a></li>
-                            <li class="user-info-dropdown__item"><a class="user-info-dropdown__link"
-                                    href="../../user/change-password.html">Change Password</a></li>
-                                                        <li class="user-info-dropdown__item"><a class="user-info-dropdown__link"
-                                    href="../../user/logout">Logout</a></li>
-                        </ul>
-                        <div class="user-info__content">
-                            <div class="d-flex justify-content-around">
-                                <span class="user-info__name" id="user_fullnameContainer"></span>
-                                <span><i class="las la-angle-down"></i></span>
-                            </div>
-                            <span class="user-info__link" id="user_emailContainer"> </span>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+            <h4 class="dashboard-header__left-title" style="margin-left: 20px;"> Site Settings </h4>
+      
         </div>
     </div>
 </div>
@@ -115,169 +74,63 @@ long, short-term and conviction-led approach to investing.">
     <span class="dashboard-body__bar-icon"><i class="las la-bars"></i></span>
 </div>
                 <div class="dashboard-body">
-                    <section class="mt-3 mb-60">
-        <div class="row notice"></div>
-        <div class="row justify-content-center mb-3">
-            <div class="col-md-12">
-                                    <div class="alert border border--danger" role="alert" id="emptyBalance">
-                        <div class="d-flex align-items-center text--white alert-box">
-                            <span class="icon"><i class="fas fa-exclamation-triangle text--danger"></i></span>
-                            <div class="alert-box__content">
-                                <span class="fw-bold">Empty Balance</span><br>
-                                <p class="alert__message">
-                                    <small>
-                                        <i>Your balance is empty. Please make                                            <a class="text--base-two" href="../../user/deposit.html" class="link-color">deposit</a> for your next investment.</i>
-                                    </small>
-                                </p>
+ 
+   
+
+                        <div class="col-xl-8">
+                            <div class="account-form" style="box-shadow: none;">
+                          
+        
+                                <form id="settingsForm">
+                                        <div class="row">
+                                        <div class="col-sm-12">
+                                            <label for="phonenumber" class="form--label">Contact Phonenumber</label>
+                                            <div class="form-group">
+                                                <input type="number" class="form--control" id="phonenumber" name="phonenumber"
+                                                     required>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <label for="contact_address" class="form--label">Contact Address</label>
+                                            <div class="form-group">
+                                                <input type="text" class="form--control" id="contact_address" name="contact_address"
+                                                     required>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <label for="eth_wallet" class="form--label">Etherum Wallet Address</label>
+                                            <div class="form-group">
+                                                <input type="text" class="form--control" id="eth_wallet" name="eth_wallet"
+                                                     required>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-12">
+                                            <label for="b_wallet" class="form--label">BTC wallet Address</label>
+                                            <div class="form-group">
+                                                <input type="text" class="form--control" id="b_wallet" name="b_wallet"
+                                                    b_wallet required>
+                                            </div>
+                                        </div>
+
+                     
+
+                                        <div class="col-sm-12">
+                                            <button type="submit" id="recaptcha" class="btn btn--base w-100">Update</button>
+                                        </div>
+
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                    </div>
-                    <div class="alert border border--warning" role="alert">
-                        <!-- <div class="d-flex align-items-center alert-box">
-                            <span class="icon"> <i class="fas fa-user-lock text--warning"></i> </span>
-                            <div class="alert-box__content">
-                                <span class="fw-bold">2FA Authentication</span><br>
-                                <p class="alert__message">
-                                    <small><i>To keep safe your account, Please enable <a href="../../user/twofactor" class="text--base-two">2FA</a> security.</i>
-                                        It will make secure your account and balance.</small>
-                                </p>
-                            </div>
-                        </div>
-                    </div> -->
-                                                                    <!-- <div class="alert border border--info" role="alert">
-                        <div class="d-flex align-items-center"><i class="fas fa-file-signature text--info"></i>
-                            <span class="fw-bold mx-3">KYC Verification Required</span><br>
-                        </div>
-                        <p>
-                            <small><i>Please submit the required KYC information to verify yourself. Otherwise, you couldn't make any withdrawal requests to the system. <a href="../../user/kyc-form" class="text--base-two">Click here</a> to submit KYC information.</i></small>
-                        </p>
-                    </div> -->
-                            </div>
+               
+                  
+             
+         
         </div>
+ 
+       
 
-        <div class="row gy-4 justify-content-center">
-            <div class="col-xxl-4 col-xl-6 col-sm-6">
-                <div class="dashboard-card">
-                    <div class="dashboard-card__shape"></div>
-                    <div class="dashboard-card__header">
-                        <span class="dashboard-card__header-icon style-four">
-                            <i class="fas fa-wallet"></i>
-                        </span>
-                        <div class="dashboard-card__header-content">
-                            <h6 class="dashboard-card__header-title"> Total Deposit Balance </h6>
-                            <span class="dashboard-card__header-currency" id="total_deposit_balance"> 0.00
-                                USD </span>
-                        </div>
-                    </div>
-                    <div class="dashboard-card__item">
-                        <div class="dashboard-card__content">
-                            <span class="dashboard-card__text"> Last Deposit </span>
-                            <h4 class="dashboard-card__amount" id="last_transaction">
-                                $   0.00  </h4>
-                        </div>
-                        <div class="dashboard-card__content">
-                            <span class="dashboard-card__text"> Pending </span>
-                            <h4 class="dashboard-card__amount" id="pending_deposit"> $0.00
-                            </h4>
-                        </div>
-                        <div class="dashboard-card__content">
-                            <span class="dashboard-card__text"> Rejected </span>
-                            <h4 class="dashboard-card__amount" id="rejected_deposit">
-                                $0.00 </h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xxl-4 col-xl-6 col-sm-6">
-                <div class="dashboard-card">
-                    <div class="dashboard-card__shape"></div>
-                    <div class="dashboard-card__header">
-                        <span class="dashboard-card__header-icon style-two">
-                            <i class="fas fa-coins"></i>
-                        </span>
-                        <div class="dashboard-card__header-content">
-                            <h6 class="dashboard-card__header-title"> Total Withdraw </h6>
-                            <span class="dashboard-card__header-currency" id="total_withdrawals"> 0.00
-                                USD </span>
-                        </div>
-                    </div>
-                    <div class="dashboard-card__item">
-                        <div class="dashboard-card__content">
-                            <span class="dashboard-card__text"> Last Withdraw </span>
-                            <h4 class="dashboard-card__amount" id="last_withdrawal">
-                                $0.00 </h4>
-                        </div>
-                        <div class="dashboard-card__content">
-                            <span class="dashboard-card__text"> Pending </span>
-                            <h4 class="dashboard-card__amount" id="pending_withdrawals">
-                                $0.00 </h4>
-                        </div>
-                        <div class="dashboard-card__content">
-                            <span class="dashboard-card__text"> Rejected </span>
-                            <h4 class="dashboard-card__amount" id="rejected_withdrawals">
-                                $0.00 </h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xxl-4 col-xl-6 col-sm-6">
-                <div class="dashboard-card">
-                    <div class="dashboard-card__shape"></div>
-                    <div class="dashboard-card__header">
-                        <span class="dashboard-card__header-icon">
-                            <i class="fas fa-funnel-dollar"></i>
-                        </span>
-                        <div class="dashboard-card__header-content">
-                            <h6 class="dashboard-card__header-title"> Total Interest Balance </h6>
-                            <span class="dashboard-card__header-currency" id="total_interest_balance"> 0.00
-                                USD </span>
-                        </div>
-                    </div>
-                    <div class="dashboard-card__item">
-                        <div class="dashboard-card__content">
-                            <span class="dashboard-card__text"> Completed </span>
-                            <h4 class="dashboard-card__amount" id="completed_interest">
-                                $0.00 </h4>
-                        </div>
-                        <div class="dashboard-card__content">
-                            <span class="dashboard-card__text"> Running </span>
-                            <h4 class="dashboard-card__amount" id="pending_interest"> $0.00
-                            </h4>
-                        </div>
-                        <div class="dashboard-card__content">
-                            <span class="dashboard-card__text"> Last Interest </span>
-                            <h4 class="dashboard-card__amount" id="last_interest"> $ 0.00 </h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-
-        <div class="pt-4 table-section">
-            <h4>My Latest Transactions</h4>
-            <div class="row gy-4">
-                <div class="col-lg-12">
-                    <table class="table style-two table--responsive--lg">
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Transaction ID</th>
-                                <th>Amount</th>
-                                <th>Wallet</th>
-                                <th>Details</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody id="transactionContainer">
-                                    
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </section>
                 </div>
             </div>
         </div>
@@ -295,7 +148,7 @@ long, short-term and conviction-led approach to investing.">
 
     <!--End of Tawk.to Script-->
     <!-- <script type="module" src="../../front/public/js/routes/foreman/navbar.js"></script> -->
-    <script type="module" src="../../front/public/js/routes/dashboard.js"></script>
+    <script type="module" src="../../front/public/js/routes/foreman/settings.js"></script>
     
 </body>
 

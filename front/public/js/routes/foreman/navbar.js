@@ -1,5 +1,8 @@
 import { parentDirectoryName } from "../constants.js"
+import { VAlidateAdmin } from "./validateAdminLogin.js"
 
+
+VAlidateAdmin()
 
 // CHECK FOR ACTIVE PAGES 
 function getURL(){
@@ -7,12 +10,20 @@ function getURL(){
 }
 
 const url = getURL()
-let dashboardActive, WithdrawActive, TransactionsActive, DepositActive, InvestmentActive, ReferralsActive
-if(url === `${parentDirectoryName}/user/dashboard.html`){
+let dashboardActive, WithdrawActive, UsersActive, DepositActive, InvestmentActive, ReferralsActive
+if(url === `${parentDirectoryName}/foreman/settings/`){
+    InvestmentActive = 'active'
+}
+
+if(url === `${parentDirectoryName}/foreman/users/`){
+    UsersActive = 'active'
+}
+
+if(url === `${parentDirectoryName}/foreman/dashboard/`){
     dashboardActive = 'active'
 }
 
-//  ValidateLogin()
+
 
 
 function createNavigation(){
@@ -28,20 +39,20 @@ const navItems  = `  <span class="sidebar-menu__close d-xl-none d-block"><i clas
 <!-- ========= Sidebar Menu Start ================ -->
 <ul class="sidebar-menu-list mt-5">
     <li class="sidebar-menu-list__item ${dashboardActive} ">
-        <a href="${parentDirectoryName}/user/dashboard.html" class="sidebar-menu-list__link ">
+        <a href="${parentDirectoryName}/foreman/dashboard/" class="sidebar-menu-list__link ">
             <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
             <span class="text">Dashboard</span>
         </a>
     </li>
-    <li class="sidebar-menu-list__item  ${InvestmentActive}">
-        <a href="${parentDirectoryName}/user/plan.html" class="sidebar-menu-list__link ">
+    <li class="sidebar-menu-list__item  ${UsersActive}">
+        <a href="${parentDirectoryName}/foreman/users/" class="sidebar-menu-list__link ">
             <span class="icon"><i class="fas fa-users"></i></span>
             <span class="text">Users</span>
         </a>
     </li>
 
     <li class="sidebar-menu-list__item  ${InvestmentActive}">
-    <a href="${parentDirectoryName}/user/plan.html" class="sidebar-menu-list__link ">
+    <a href="${parentDirectoryName}/foreman/settings/" class="sidebar-menu-list__link ">
         <span class="icon"><i class="fas fa-cog"></i></span>
         <span class="text">Settings</span>
     </a>
@@ -52,7 +63,7 @@ const navItems  = `  <span class="sidebar-menu__close d-xl-none d-block"><i clas
     
 
     <li class="sidebar-menu-list__item">
-        <a href="${parentDirectoryName}/user/logout" class="sidebar-menu-list__link">
+        <a href="${parentDirectoryName}/foreman/logout" class="sidebar-menu-list__link">
             <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
             <span class="text">Logout</span>
         </a>

@@ -3,11 +3,9 @@ include "../db.php";
 session_start();
 
 
-$data = json_decode(file_get_contents('php://input'), true);
-
 // Access the values
-$transactionID = $data['transactionID'];
-$userID = $data['userID'];
+$transactionID = $_POST['transactionID'];
+$userID = $_POST['userID'];
 
 if(isset($_SESSION["administrator"])){
 
@@ -50,13 +48,14 @@ if(isset($_SESSION["administrator"])){
                 $newBalance = $currentBalance - $amount;
 
                 $stmt = $con->prepare("UPDATE `user_data` SET `current_balance` = ? WHERE `username` = ? LIMIT 1");
-                $stmt->bind_param("s", $newBalance, $userID);
+                $stmt->bind_param("ss", $newBalance, $userID);
                 $stmt->execute();
             }
 
 
             $response = array("status" => "succsss", "message" => "Transaction Approved Successfully");
             echo json_encode($response);
+            header('Location: ../../foreman/dashboard');
            }else{
             $response = array("status" => "error", "message" =>  "Error: " . $stmt->error);
            echo json_encode($response);
@@ -68,4 +67,7 @@ if(isset($_SESSION["administrator"])){
         }
     }
 
+}else{
+    $response = array("status" => "error", "message" => "Not Logged IN");
+    echo json_encode($response);
 }

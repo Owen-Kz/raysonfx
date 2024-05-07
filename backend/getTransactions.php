@@ -30,7 +30,7 @@ if(isset($userId)){
         $username = $row["username"];
         $accountBalance = $row["current_balance"];
 
-        $stmt = $con->prepare("SELECT * FROM `transactions` WHERE `username` = ? ");
+        $stmt = $con->prepare("SELECT * FROM `transactions` WHERE `username` = ?  ORDER BY `id` DESC");
         $stmt->bind_param("s", $username);
         
         if($stmt->execute()){

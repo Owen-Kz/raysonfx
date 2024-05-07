@@ -2,16 +2,14 @@
 include "../db.php";
 session_start();
 
-
-$data = json_decode(file_get_contents('php://input'), true);
-
 // Access the values
-$transactionID = $data['transactionID'];
-$userID = $data['userID'];
+$transactionID = $_POST['transactionID'];
+$userID = $_POST['userID'];
+
 
 if(isset($_SESSION["administrator"])){
 
-    if(isset($trsnsactionID) &&  isset($userID)){
+    if(isset($transactionID) &&  isset($userID)){
         // Find Transaction Data 
         $stmt = $con->prepare("SELECT * FROM `transactions` WHERE md5(`id`) = ? AND `username` = ?");
         $stmt->bind_param("ss", $transactionID, $userID);
@@ -30,6 +28,7 @@ if(isset($_SESSION["administrator"])){
            if($stmt->execute()){
             $response = array("status" => "succsss", "message" => "Transaction Rejected Successfully");
             echo json_encode($response);
+            header('Location: ../../foreman/dashboard');
            }else{
             $response = array("status" => "error", "message" =>  "Error: " . $stmt->error);
            echo json_encode($response);
