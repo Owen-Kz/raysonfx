@@ -26,6 +26,26 @@ if(isset($_SESSION["administrator"])){
             $stmt = $con->prepare("UPDATE `transactions` SET `status` = 'rejected' WHERE md5(`id`) = ? AND `username` = ?");
             $stmt->bind_param("ss", $transactionID, $userID);
            if($stmt->execute()){
+            $stmt = $con->prepare("SELECT SUM(`amount`) AS `totalApproved` FROM `transactions` WHERE `username` = ? AND `status` = 'completed' ");
+            $stmt->bind_param("s", $userID);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $run_query = $result;
+            $row = mysqli_fetch_assoc($run_query);
+            $newBalance = $row["totalApproved"];
+
+            if($newBalance > 0){
+                $stmt = $con->prepare("UPDATE `user_data` SET `current_balance` = ? WHERE `username` = ? LIMIT 1");
+                $stmt->bind_param("ss", $newBalance, $userID);
+                $stmt->execute();
+            }else{
+                $stmt = $con->prepare("UPDATE `user_data` SET `current_balance` = 0 WHERE `username` = ? LIMIT 1");
+                $stmt->bind_param("s", $userID);
+                $stmt->execute();
+            }
+
+                
+            
             $response = array("status" => "succsss", "message" => "Transaction Rejected Successfully");
             echo json_encode($response);
             header('Location: ../../foreman/dashboard');

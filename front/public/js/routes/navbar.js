@@ -142,12 +142,6 @@ const navItems  = `  <span class="sidebar-menu__close d-xl-none d-block"><i clas
             <span class="text"> Transactions </span>
         </a>
     </li>
-    <li class="sidebar-menu-list__item ${ReferralsActive} ">
-        <a href="${parentDirectoryName}/user/referrals.html" class="sidebar-menu-list__link">
-            <span class="icon"> <i class="fas fa-users"></i> </span>
-            <span class="text"> Referrals </span>
-        </a>
-    </li>
 
     
                 <!-- <li class="sidebar-menu-list__item ">

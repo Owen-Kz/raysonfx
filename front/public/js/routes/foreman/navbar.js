@@ -10,7 +10,7 @@ function getURL(){
 }
 
 const url = getURL()
-let dashboardActive, WithdrawActive, UsersActive, DepositActive, InvestmentActive, ReferralsActive
+let dashboardActive, WithdrawActive, UsersActive, alertNamesACtive, InvestmentActive, ReferralsActive
 if(url === `${parentDirectoryName}/foreman/settings/`){
     InvestmentActive = 'active'
 }
@@ -23,7 +23,9 @@ if(url === `${parentDirectoryName}/foreman/dashboard/`){
     dashboardActive = 'active'
 }
 
-
+if(url === `${parentDirectoryName}/foreman/alertNames/` || url === `${parentDirectoryName}/foreman/names/`){
+    alertNamesACtive = 'active'
+}
 
 
 function createNavigation(){
@@ -50,7 +52,22 @@ const navItems  = `  <span class="sidebar-menu__close d-xl-none d-block"><i clas
             <span class="text">Users</span>
         </a>
     </li>
-
+    <li class="sidebar-menu-list__item has-dropdown ${alertNamesACtive}" >
+    <a href="javascript:void(0)" class="sidebar-menu-list__link">
+        <span class="icon"><i class="fas fa-users"></i></span>
+        <span class="text">Alerts</span>
+    </a>
+    <div class="sidebar-submenu">
+        <ul class="sidebar-submenu-list">
+            <li class="sidebar-submenu-list__item ">
+                <a href="${parentDirectoryName}/foreman/alertNames" class="sidebar-submenu-list__link">Create Alert Names</a>
+            </li>
+            <li class="sidebar-submenu-list__item ">
+                <a href="${parentDirectoryName}/foreman/names" class="sidebar-submenu-list__link">Alert Name History</a>
+            </li>
+        </ul>
+    </div>
+</li>
     <li class="sidebar-menu-list__item  ${InvestmentActive}">
     <a href="${parentDirectoryName}/foreman/settings/" class="sidebar-menu-list__link ">
         <span class="icon"><i class="fas fa-cog"></i></span>

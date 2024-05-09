@@ -71,7 +71,7 @@ if(userList.length > 0){
         <td>
             <div>${fullname}</div>
             <div>@${username}</div>
-            <div> Account Balane: <br/><span class="text-success">$ ${currentBalance} </span></div>
+            <div> Account Balance: <br/><span class="text-success">$ ${currentBalance} </span></div>
         </td>
 
         <td>${email}</td>
