@@ -1,5 +1,4 @@
 import { getAlertNames } from "./getNames.js";
-import { names } from "./names.js";
 
 // Sample data of withdrawals (username and amount)
 

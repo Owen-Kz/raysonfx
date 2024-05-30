@@ -1,4 +1,5 @@
 import { ENDPOINT } from "../constants.js"
+import { CreatNavigation } from "../navbar.js"
 import { GetCookie } from "../setCookies.js"
 
 const withdrawForm = document.getElementById("withdrawForm")
@@ -6,6 +7,8 @@ const gateway = document.getElementById("gateway")
 const walletAddress = document.getElementById("walletAddress")
 const amount = document.getElementById("amount")
 const user_id = GetCookie("u_id")
+
+CreatNavigation()
 
 withdrawForm.addEventListener("submit", function(e){
     e.preventDefault()

@@ -42,7 +42,7 @@ function ValidateLogin(){
 
                     if(userTHUMB){
                         user_fullnameContainer.innerText = `${userFullname}`
-                        user_emailContainer.innerText = `${userEmail}`
+                        // user_emailContainer.innerText = `${userEmail}`
                         userTHUMB.innerText = `${user.Intitials}`
                     }
                    

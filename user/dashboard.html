@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<html lang="en" >
 
 <head>
     <!-- Required meta tags -->
@@ -8,26 +8,18 @@
     <title> Rayson Finance - Dashboard</title>
     <meta name="title" Content="Rayson Finance - Dashboard">
 
-    <meta name="description" content="Rayson Finance is a leading international asset manager, known for its
-long, short-term and conviction-led approach to investing.">
-    <meta name="keywords" content="bitcoin,investment,Rayson Finance,forex,company">
     <link rel="shortcut icon" href="../assets/images/logoIcon/favicon.png" type="image/x-icon">
 
     
     <link rel="apple-touch-icon" href="../assets/images/logoIcon/logo.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Rayson Finance - Dashboard">
-    
-    <meta itemprop="name" content="Rayson Finance - Dashboard">
-    <meta itemprop="description" content="Rayson Finance is a leading international asset manager, known for its
-long, short-term and conviction-led approach to investing.">
+
     <meta itemprop="image" content="../assets/images/seo/65be1258275121706955344.png">
     
     <meta property="og:type" content="website">
     <meta property="og:title" content="Rayson Finance">
-    <meta property="og:description" content="Rayson Finance is a leading international asset manager, known for its
-long, short-term and conviction-led approach to investing.">
+
     <meta property="og:image" content="../assets/images/seo/65be1258275121706955344.png"/>
     <meta property="og:image:type" content="png"/>
     <meta property="og:image:width" content="1180" />
@@ -132,27 +124,7 @@ long, short-term and conviction-led approach to investing.">
                             </div>
                         </div>
                     </div>
-                    <div class="alert border border--warning" role="alert">
-                        <!-- <div class="d-flex align-items-center alert-box">
-                            <span class="icon"> <i class="fas fa-user-lock text--warning"></i> </span>
-                            <div class="alert-box__content">
-                                <span class="fw-bold">2FA Authentication</span><br>
-                                <p class="alert__message">
-                                    <small><i>To keep safe your account, Please enable <a href="../user/twofactor" class="text--base-two">2FA</a> security.</i>
-                                        It will make secure your account and balance.</small>
-                                </p>
-                            </div>
-                        </div>
-                    </div> -->
-                                                                    <!-- <div class="alert border border--info" role="alert">
-                        <div class="d-flex align-items-center"><i class="fas fa-file-signature text--info"></i>
-                            <span class="fw-bold mx-3">KYC Verification Required</span><br>
-                        </div>
-                        <p>
-                            <small><i>Please submit the required KYC information to verify yourself. Otherwise, you couldn't make any withdrawal requests to the system. <a href="../user/kyc-form" class="text--base-two">Click here</a> to submit KYC information.</i></small>
-                        </p>
-                    </div> -->
-                            </div>
+          
         </div>
 
         <div class="row gy-4 justify-content-center">
@@ -389,51 +361,7 @@ long, short-term and conviction-led approach to investing.">
 <script src="../assets/global/js/iziToast.min.js"></script>
 
 
-    <script>
-        (function($) {
-            "use strict";
-            $(".langSel").on("change", function() {
-                window.location.href = "../change/" + $(this).val();
-            });
-
-            $('.policy').on('click', function() {
-                $.get('../cookie/accept', function(response) {
-                    $('.cookies-card').addClass('d-none');
-                });
-            });
-
-            setTimeout(function() {
-                $('.cookies-card').removeClass('hide')
-            }, 2000);
-
-            var inputElements = $('[type=text],[type=password],[type=email],[type=number],select,textarea');
-            $.each(inputElements, function(index, element) {
-                element = $(element);
-                element.closest('.form-group').find('label').attr('for', element.attr('name'));
-                element.attr('id', element.attr('name'))
-            });
-
-            $.each($('input, select, textarea'), function(i, element) {
-                var elementType = $(element);
-                if (elementType.attr('type') != 'checkbox') {
-                    if (element.hasAttribute('required')) {
-                        $(element).closest('.form-group').find('label').addClass('required');
-                    }
-                }
-            });
-
-            Array.from(document.querySelectorAll('table')).forEach(table => {
-                let heading = table.querySelectorAll('thead tr th');
-                Array.from(table.querySelectorAll('tbody tr')).forEach((row) => {
-                    Array.from(row.querySelectorAll('td')).forEach((colum, i) => {
-                        colum.setAttribute('data-label', heading[i].innerText)
-                    });
-                });
-            });
-
-        })(jQuery);
-    </script>
-<!-- <script src="//code.tidio.co/ul5qgbsv4aaw44cev9wh3hoyyxwmkqqa.js" async></script> -->
+ 
 	<!--Start of Tawk.to Script-->
     <script type="text/javascript">
         var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();

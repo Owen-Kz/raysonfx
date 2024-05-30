@@ -11,7 +11,8 @@ const gateway = document.getElementById("gateway")
 const SiteData = await GetSiteData()
 
 let gatewayText 
-if(gateway.value === "1000"){
+console.log(gateway.value)
+if(gateway.value === "1001"){
     gatewayText = "BTC"
 }else{
     gatewayText = "ETH"
