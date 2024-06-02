@@ -96,7 +96,7 @@
                                 </div>
         
                                 <form id="signupForm">
-                                    <input type="hidden" name="_token" value="ITbyuJKWQX2cnTRIsjXHnlLvCanqfzAAI95O5ZNE">                                    <div class="row">
+                                                                     <div class="row">
                                         <div class="col-sm-12">
                                             <label for="username" class="form--label">Username</label>
                                             <div class="form-group">
@@ -163,110 +163,9 @@
        
     
 
-                <!-- cookies dark version start -->
-        <div class="cookies-card text-center hide">
-            <div class="cookies-card__icon bg--base">
-                <i class="las la-cookie-bite"></i>
-            </div>
-            <p class="mt-4 cookies-card__content">We may use cookies or any other tracking technologies when you visit our website, including any other media form, mobile website, or mobile application related or connected to help customize the Site and improve your experience. <a
-                    href="./../../cookie-policy.html" class="text-primary" target="_blank">learn more</a></p>
-            <div class="cookies-card__btn mt-4">
-                <a href="javascript:void(0)" class="btn btn--base text-white w-100 policy">Allow</a>
-            </div>
-        </div>
-        <!-- cookies dark version end -->
     <script src="./../../assets/global/js/jquery-3.6.0.min.js"></script>
     <script src="./../../assets/global/js/bootstrap.bundle.min.js"></script>
     <script src="./../../assets/templates/metro_hyip/js/main.js"></script>
-
-        <script src="./../../assets/global/js/web3.min.js"></script>
-        <script>
-        var account = null;
-        var signature = null;
-        var message = 'Sign in koro';
-        var token = null;
-        $('.metamaskLogin').on('click', async () => {
-            // detect wallet
-            if (!window.ethereum) {
-                notify('error', 'MetaMask not detected. Please install MetaMask first.');
-                return;
-            }
-
-            // get wallet address
-            await window.ethereum.request({
-                method: 'eth_requestAccounts'
-            });
-            window.web3 = new Web3(window.ethereum);
-            accounts = await web3.eth.getAccounts();
-            account = accounts[0];
-
-            // get unique message
-            let response = await fetch(`./../../user/login/metamask`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    'account': account,
-                    '_token': 'ITbyuJKWQX2cnTRIsjXHnlLvCanqfzAAI95O5ZNE'
-                })
-            });
-            message = (await response.json()).message;
-            setTimeout(async () => {
-                // get signature
-                signature = await web3.eth.personal.sign(message, account);
-
-                // verify signature
-                response = await fetch(`./../../user/login/metamask/verify`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        'signature': signature,
-                        '_token': 'ITbyuJKWQX2cnTRIsjXHnlLvCanqfzAAI95O5ZNE'
-                    })
-                });
-                response = await response.json();
-
-                notify(response.type, response.message);
-
-                // handle login
-                if (response.type == 'success') {
-                    setTimeout(() => {
-                        window.location.href = response.redirect_url;
-                    }, 2000);
-                }
-            }, 1500);
-
-        })
-    </script>
-
-    
-    <link rel="stylesheet" href="./../../assets/global/css/iziToast.min.css">
-<script src="./../../assets/global/js/iziToast.min.js"></script>
-
-
-<script>
-    "use strict";
-    function notify(status, message) {
-        if (typeof message == 'string') {
-            iziToast[status]({
-                message: message,
-                position: "topRight"
-            });
-        } else {
-            $.each(message, function(i, val) {
-                iziToast[status]({
-                    message: val,
-                    position: "topRight"
-                });
-            });
-        }
-    }
-</script>
-
-    <script src="./../../assets/global/js/firebase/firebase-8.3.2.js"></script>
 
 
 

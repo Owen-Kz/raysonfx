@@ -8,7 +8,7 @@ const RegistrationForm = document.getElementById("signupForm")
 
 const email = document.getElementById("email")
 const password = document.getElementById("password")
-window.location.href = `${parentDirectoryName}/foreman/login`
+// window.location.href = `${parentDirectoryName}/foreman/login`
 
 RegistrationForm.addEventListener("submit", function (e) {
     e.preventDefault()
