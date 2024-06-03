@@ -80,8 +80,8 @@ if(userList.length > 0){
             ${address}, ${state}, ${country}. ${zipCode}
         </td>
         <td>
-        <a href="../../../../../foreman/fundUser/"> Fund User </a>
-        </td>
+        <a href="../../../../../foreman/fundUser?u_id=${username}"> Fund User </a>
+        </td>1
     </tr>`
     });
 }else{
