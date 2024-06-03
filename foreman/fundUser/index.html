@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rayson Finance | Fund User</title>
+</head>
+<body>
+    <form id="fundUserForm">
+        <input type="text" name="username" id="username" readonly>
+        <input type="number" placeholder="Enter Amount" id="amount" name="amount" required>
+        <select name="trans_type" id="trans_type" required>
+            <option value="">Select Trnsaction Type</option>
+            <option value="Interest">Interest</option>
+            <option value="depositWalletCredit"> Deposit</option>
+        </select>
+
+        <button>Fund User</button>
+    </form>
+
+    <script type="module" src="../../front/public/js/routes/foreman/fundUser.js"></script>
+</body>
+</html>

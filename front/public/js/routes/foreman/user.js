@@ -79,7 +79,9 @@ if(userList.length > 0){
         <td>
             ${address}, ${state}, ${country}. ${zipCode}
         </td>
-   
+        <td>
+        <a href="../../../../../foreman/fundUser/"> Fund User </a>
+        </td>
     </tr>`
     });
 }else{
