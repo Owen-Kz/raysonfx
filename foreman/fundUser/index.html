@@ -1,23 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rayson Finance | Fund User</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title> Rayson Finance - Fund User</title>
+  <meta name="title" Content="Rayson Finance - Settings">
+
+
+  <link rel="shortcut icon" href="../../assets/images/logoIcon/favicon.png" type="image/x-icon">
+
+
+  <link rel="apple-touch-icon" href="../../assets/images/logoIcon/logo.png">
+
+
+
+  <meta itemprop="image" content="../../assets/images/seo/65be1258275121706955344.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Bootstrap CSS -->
+  <link href="../../assets/global/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="../../assets/global/css/all.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../assets/global/css/line-awesome.min.css" />
+
+  <link rel="stylesheet" href="../../assets/templates/metro_hyip/css/main.css">
+
+  <link rel="stylesheet" href="../../assets/templates/metro_hyip/css/custom.css">
+
+
+
+  <!-- <link rel="stylesheet" href="../../assets/templates/metro_hyip/css/color.css?color=EB4830&secondColor="> -->
+  <link rel="stylesheet" href="../../front/public/css/header.css">
 </head>
+
 <body>
-    <form id="fundUserForm">
-        <input type="text" name="username" id="username" readonly>
-        <input type="number" placeholder="Enter Amount" id="amount" name="amount" required>
-        <select name="trans_type" id="trans_type" required>
-            <option value="">Select Trnsaction Type</option>
-            <option value="Interest">Interest</option>
-            <option value="depositWalletCredit"> Deposit</option>
-        </select>
+  <div class="preloader">
+    <div class="loader-p"></div>
+  </div>
 
-        <button>Fund User</button>
-    </form>
+  <div class="body-overlay"></div>
 
-    <script type="module" src="../../front/public/js/routes/foreman/fundUser.js"></script>
+  <div class="sidebar-overlay"></div>
+
+  <a class="scroll-top"><i class="fas fa-angle-double-up"></i></a>
+
+  <div class="dashboard-fluid position-relative">
+    <div class="dashboard__inner">
+      <div class="sidebar-menu" id="userMenu">
+
+      </div>
+      <!-- ========= Sidebar Menu End ================ -->
+      <div class="dashboard__right">
+        <div class="dashboard-header">
+
+          <div class="dashboard-header__inner">
+
+            <div class="dashboard-header__left">
+              <a href="#" class="sidebar-logo__link"> <img src="../../assets/images/logoIcon/logo.png" alt="site-logo"></a>
+            </div>
+            <div class="dashboard-header__right">
+              <h4 class="dashboard-header__left-title" style="margin-left: 20px;"> Site Settings </h4>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-body__bar d-xl-none d-block mt-2 text-end">
+          <span class="dashboard-body__bar-icon"><i class="las la-bars"></i></span>
+        </div>
+        <div class="dashboard-body">
+
+
+
+          <div class="col-xl-8">
+            <div class="account-form" style="box-shadow: none;">
+
+
+
+              <form id="fundUserForm">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <label for="username_placeholder" class="form--label">Username</label>
+                    <div class="form-group">
+                      <input type="text" class="form--control" name="username_placeholder" id="username_placeholder" readonly>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-12">
+                    <label for="amount" class="form--label">Amount</label>
+                    <div class="form-group">
+                      <input type="number" placeholder="Enter Amount" class="form--control" id="amount" name="amount" required>
+
+                    </div>
+                  </div>
+
+                  <div class="col-sm-12">
+                    <label for="trans_type" class="form--label">Transaction Type</label>
+                    <div class="form-group">
+                      <select name="trans_type" id="trans_type" class="form--control" required>
+                        <option value="">Select Trnsaction Type</option>
+                        <option value="interest">Interest</option>
+                        <option value="depositWalletCredit"> Deposit</option>
+                      </select>
+                    </div>
+                  </div>
+
+
+                  <div class="col-sm-12">
+                    <button type="submit" class="btn btn--base w-100">Fund User</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+
+
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="../../assets/global/js/jquery-3.6.0.min.js"></script>
+  <script src="../../assets/global/js/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/templates/metro_hyip/js/main.js"></script>
+
+
+
+  <link rel="stylesheet" href="../../assets/global/css/iziToast.min.css">
+
+
+  <script type="module" src="../../front/public/js/routes/foreman/fundUser.js"></script>
+
+
 </body>
+
 </html>

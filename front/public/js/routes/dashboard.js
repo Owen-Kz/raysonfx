@@ -13,7 +13,7 @@ GetBalancesAndHistory(uid)
 
 
 // Example usage
-calculatePercentage(100, 10, 5); // Replace with your desired values
+// calculatePercentage(100, 10, 5); // Replace with your desired values
 
 
 function GetBalancesAndHistory(user_id){
@@ -49,6 +49,7 @@ function GetBalancesAndHistory(user_id){
     const rejectedWithdrawals = document.getElementById("rejected_withdrawals")
     const lastWithdrawal = document.getElementById("last_withdrawal")
     const TotalWithdrawals = document.getElementById("total_withdrawals")
+    
     fetch(`${ENDPOINT}/withdrawals/pending.php?uid=${user_id}`,{
         method: "GET"
     }).then(res => res.json())
@@ -86,6 +87,7 @@ function GetBalancesAndHistory(user_id){
     const pendingInterest = document.getElementById("pending_interest")
     const compeletedInterest = document.getElementById("completed_interest")
     const lastIntesrest = document.getElementById("last_interest")
+    const TotalInterset = document.getElementById("total_interest_balance")
 
     // compelted  INTEREST 
     fetch(`${ENDPOINT}/interest/completed.php?uid=${user_id}`, {
@@ -93,6 +95,7 @@ function GetBalancesAndHistory(user_id){
     }).then(res => res.json())
     .then(data =>{
         compeletedInterest.innerText = `$ ${new Number(data.completed).toFixed(2)}`
+        TotalInterset.innerText = `$ ${new Number(data.completed).toFixed(2)}`
     })
     // PENDING INTEREST 
     fetch(`${ENDPOINT}/interest/pending.php?uid=${user_id}`, {

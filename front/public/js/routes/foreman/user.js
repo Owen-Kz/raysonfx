@@ -1,5 +1,6 @@
 
 
+import { parentDirectoryName } from "../constants.js";
 import { formatTimestamp } from "../formatDate.js";
 import { GetCookie } from "../setCookies.js";
 import { createNavigation } from "./navbar.js";
@@ -80,7 +81,7 @@ if(userList.length > 0){
             ${address}, ${state}, ${country}. ${zipCode}
         </td>
         <td>
-        <a href="../../../../../foreman/fundUser?u_id=${username}"> Fund User </a>
+        <a href="${parentDirectoryName}/foreman/fundUser?u_id=${username}"> Fund User </a>
         </td>1
     </tr>`
     });

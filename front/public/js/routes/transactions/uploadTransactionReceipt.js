@@ -17,7 +17,7 @@ const SiteData = await GetSiteData()
 
 if(GateWay === "ETH"){
     header.innerHTML = `<i class="las la-wallet"></i> Crypto Payment (ETHEREUM &amp; USDT ERC20) Payment`
-    const ToETH = Details.amount * 1
+    const ToETH = Details.amount * SiteData.eth_rate
 
     gatewayContent.innerHTML = `<p class="text-center mt-2">You have requested 
         <b class="text--success">${new Number(Details.amount).toFixed(2)} USD</b> ,
@@ -27,7 +27,7 @@ if(GateWay === "ETH"){
         </div>`;
 }else{
     header.innerHTML = `<i class="las la-wallet"></i> Crypto Payment (BTC) Payment`
-    const ToBTC = Details.amount * 0.000016
+    const ToBTC = Details.amount * SiteData.btc_rate
 
      gatewayContent.innerHTML = `
     <p class="text-center mt-2">You have requested 
@@ -56,15 +56,19 @@ FileUploadForm.addEventListener("submit", function(e){
     })
     .then(res => res.json())
     .then(data => {
+        if(data){
         if (data.status === "success") {
             console.log(data.message);
             alert(data.message)
-            window.location.href = `${parentDirectoryName}/user/dashbord.html`
+            window.location.href = `${parentDirectoryName}/user/dashboard.html`
             DeleteCookie("t_rd")
         } else {
             alert(data.message);
-            window.location.href = `${parentDirectoryName}/user/dashbord.html`;
+            window.location.href = `${parentDirectoryName}/user/dashboard.html`;
         }
+    }else{
+        console.log("No Data Available")
+    }
     })
     .catch(error => {
         console.error("Error:", error);

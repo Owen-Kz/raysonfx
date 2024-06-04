@@ -11,12 +11,20 @@ const gateway = document.getElementById("gateway")
 const SiteData = await GetSiteData()
 
 let gatewayText 
-console.log(gateway.value)
-if(gateway.value === "1001"){
+gateway.addEventListener("change", function(){
+
+if(gateway.value !== ""){
+
+if(gateway.value === "btc"){
     gatewayText = "BTC"
-}else{
+}else if(gateway.value === "eth"){
     gatewayText = "ETH"
 }
+}else{
+    console.log("Gateway Not Set")
+}
+
+})
 
 
 DepositForm.addEventListener("submit", function(e){

@@ -35,11 +35,15 @@ const eth_wallet = document.getElementById("eth_wallet");
 const b_wallet = document.getElementById("b_wallet")
 const contact_address = document.getElementById("contact_address")
 const phone = document.getElementById("phonenumber")
+const BTC_Rate = document.getElementById('btc_rate')
+const ETH_Rate = document.getElementById("eth_rate")
 
 // if(SiteInfo.length > 0){
     eth_wallet.value = SiteInfo.eth 
     b_wallet.value = SiteInfo.btc
     contact_address.value = SiteInfo.office  
     phone.value = SiteInfo.phone
+    BTC_Rate.value = SiteInfo.btc_rate 
+    ETH_Rate.value = SiteInfo.eth_rate
 // }
 
