@@ -44,7 +44,7 @@ function REGISTER(user) {
             if (data.status === "success") {
                 // window.location.href = "WE SENT EMAIL VERIFICATION PAGE"
                 console.log(data.message)
-                window.location.href = `../login`
+                window.location.href = `../foreman/login`
             } else {
                 alert(data.message)
                 console.log(data.message)
