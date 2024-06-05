@@ -23,6 +23,11 @@ if(url === `${parentDirectoryName}/foreman/dashboard/`){
     dashboardActive = 'active'
 }
 
+if(url === `${parentDirectoryName}/foreman/withdrawals/`){
+    WithdrawActive = 'active'
+}
+
+
 if(url === `${parentDirectoryName}/foreman/alertNames/` || url === `${parentDirectoryName}/foreman/names/`){
     alertNamesACtive = 'active'
 }
@@ -52,6 +57,12 @@ const navItems  = `  <span class="sidebar-menu__close d-xl-none d-block"><i clas
             <span class="text">Users</span>
         </a>
     </li>
+    <li class="sidebar-menu-list__item  ${WithdrawActive}">
+    <a href="${parentDirectoryName}/foreman/withdrawals/" class="sidebar-menu-list__link ">
+        <span class="icon"><i class="fas fa-wallet"></i></span>
+        <span class="text">Withdrawals</span>
+    </a>
+</li>
     <li class="sidebar-menu-list__item has-dropdown ${alertNamesACtive}" >
     <a href="javascript:void(0)" class="sidebar-menu-list__link">
         <span class="icon"><i class="fas fa-users"></i></span>

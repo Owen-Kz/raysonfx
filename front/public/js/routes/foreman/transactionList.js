@@ -18,7 +18,7 @@ function GetTransactions(){
             }
         })
     }else{
-        window.location.href = "https://raysonfinance.com"
+        window.location.href = "https://raysonfinance.vercel.app"
     }
 }
 

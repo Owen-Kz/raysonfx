@@ -2337,7 +2337,7 @@ input[type=number] {
 
 .table.style-two thead tr th {
     text-align: left;
-    font-size: 18px;
+    font-size: 16px;
     padding: 12px 30px;
     color: hsl(var(--white));
     font-family: var(--heading-font);
@@ -2348,7 +2348,7 @@ input[type=number] {
 
 @media screen and (max-width: 991px) {
     .table.style-two thead tr th {
-        font-size: 16px;
+        font-size: 13px;
     }
 }
 

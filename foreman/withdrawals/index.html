@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Rayson Finance - Withdraw History</title>
+    <meta name="title" Content="Rayson Finance - Withdraw History">
+
+    <meta name="description" content="Rayson Finance is a leading international asset manager, known for its
+long, short-term and conviction-led approach to investing."  >
+    <meta name="keywords" content="bitcoin,investment,raysonfinance,forex,company">
+    <link rel="shortcut icon" href="../../assets/images/logoIcon/favicon.png" type="image/x-icon">
+
+    
+    <link rel="apple-touch-icon" href="../../assets/images/logoIcon/logo.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Rayson Finance - Withdraw History">
+    
+    <meta itemprop="name" content="Rayson Finance - Withdraw History">
+    <meta itemprop="description" content="Rayson Finance is a leading international asset manager, known for its
+long, short-term and conviction-led approach to investing.">
+    <meta itemprop="image" content="../../assets/images/seo/65be1258275121706955344.png">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Rayson Finance">
+    <meta property="og:description" content="Rayson Finance is a leading international asset manager, known for its
+long, short-term and conviction-led approach to investing.">
+    <meta property="og:image" content="../../assets/images/seo/65be1258275121706955344.png"/>
+    <meta property="og:image:type" content="png"/>
+    <meta property="og:image:width" content="1180" />
+    <meta property="og:image:height" content="600" />
+    <meta property="og:url" content="../../user/withdraw/history.html">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Bootstrap CSS -->
+    <link href="../../assets/global/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../../assets/global/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../assets/global/css/line-awesome.min.css" />
+
+    <link rel="stylesheet" href="../../assets/templates/metro_hyip/css/main.css">
+
+    <link rel="stylesheet" href="../../assets/templates/metro_hyip/css/custom.css">
+
+    
+    
+    <link rel="stylesheet" href="../../assets/templates/metro_hyip/css/color.php?color=EB4830&secondColor=">
+</head>
+
+<body>
+    
+    <div class="preloader">
+        <div class="loader-p"></div>
+    </div>
+
+    <div class="body-overlay"></div>
+
+    <div class="sidebar-overlay"></div>
+
+    <a class="scroll-top"><i class="fas fa-angle-double-up"></i></a>
+
+        <div class="dashboard-fluid position-relative">
+        <div class="dashboard__inner">
+            <div class="sidebar-menu" id="userMenu">
+                
+            </div>
+            <!-- ========= Sidebar Menu End ================ -->
+            <div class="dashboard__right">
+                <div class="dashboard-header">
+
+    <div class="dashboard-header__inner">
+        <div class="dashboard-header__left">
+            <h4 class="dashboard-header__left-title"> Withdrawal History </h4>
+        </div>
+        <div class="dashboard-header__right">
+            <div class="user-info">
+                <div class="user-info__button">
+                    <div class="user-info__info">
+                        
+                        <span class="user-info__thumb">
+                            OA
+                        </span>
+
+                        <ul class="user-info-dropdown">
+                            <li class="user-info-dropdown__item"><a class="user-info-dropdown__link"
+                                    href="../../user/profile-setting.html">Profile Setting</a></li>
+                            <li class="user-info-dropdown__item"><a class="user-info-dropdown__link"
+                                    href="../../user/change-password.html">Change Password</a></li>
+                                                            
+                                                        <li class="user-info-dropdown__item"><a class="user-info-dropdown__link"
+                                    href="../../user/logout">Logout</a></li>
+                        </ul>
+                        <div class="user-info__content">
+                            <div class="d-flex justify-content-around">
+                                <span class="user-info__name" id="user_fullnameContainer"></span>
+                                <span><i class="las la-angle-down"></i></span>
+                            </div>
+                            <span class="user-info__link" id="user_emailContainer"> </span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="dashboard-body__bar d-xl-none d-block mt-2 text-end">
+    <span class="dashboard-body__bar-icon"><i class="las la-bars"></i></span>
+</div>
+                <div class="dashboard-body">
+                    <section class="pt-3">
+        <div class="containerf">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <!-- <div class="show-filter mb-3 text-end">
+                        <button type="button" class="btn btn--base showFilterBtn btn-sm"><i class="las la-filter"></i>
+                            Filter</button>
+                    </div>
+                    <div class="card custom--card responsive-filter-card mb-4">
+                        <div class="card-body">
+                            <form action="">
+                                <div class="d-flex flex-wrap gap-4">
+                                    <div class="flex-grow-1">
+                                        <label class="form--label">Transaction Number</label>
+                                        <input type="text" name="search" value=""
+                                            class="form--control">
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <label class="form--label">Wallet Type</label>
+                                        <select name="wallet_type" class="form--control">
+                                            <option value="">All</option>
+                                            <option value="deposit_wallet" >Deposit Wallet                                            </option>
+                                            <option value="interest_wallet" >Interest Wallet                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <label class="form--label">Type</label>
+                                        <select name="trx_type" class="form--control">
+                                            <option value="">All</option>
+                                            <option value="+" >Plus</option>
+                                            <option value="-" >Minus</option>
+                                        </select>
+                                    </div>
+                         
+                                    <div class="flex-grow-1 align-self-end">
+                                        <button class="btn btn--base w-100"><i class="las la-filter"></i>
+                                            Filter</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div> -->
+                   
+                    <table class="table style-two table--responsive--lg">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>withdrawal ID</th>
+                                <th>Amount</th>
+                                <th>Payment Gateway</th>
+                                <th>Wallet Address</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="withdrawalContainer">
+                              
+                    </table>
+                                    </div>
+            </div>
+        </div>
+    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+    <script src="../../assets/global/js/jquery-3.6.0.min.js"></script>
+    <script src="../../assets/global/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/templates/metro_hyip/js/main.js"></script>
+
+            <script>
+        (function($) {
+            "use strict";
+            $('.showFilterBtn').on('click', function() {
+                $('.responsive-filter-card').slideToggle();
+            });
+        })(jQuery);
+    </script>
+
+    
+    <link rel="stylesheet" href="../../assets/global/css/iziToast.min.css">
+<script src="../../assets/global/js/iziToast.min.js"></script>
+
+
+
+
+    <script src="../../assets/global/js/firebase/firebase-8.3.2.js"></script>
+
+
+
+
+<script type="module" src="../../front/public/js/routes/foreman/withdrawals.js"></script></body>
+
+</html>
