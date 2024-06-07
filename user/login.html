@@ -193,90 +193,29 @@
     <script src="../assets/templates/metro_hyip/js/main.js"></script>
 
         <script src="../assets/global/js/web3.min.js"></script>
-        <script>
-        var account = null;
-        var signature = null;
-        var message = 'Sign in koro';
-        var token = null;
-        $('.metamaskLogin').on('click', async () => {
-            // detect wallet
-            if (!window.ethereum) {
-                notify('error', 'MetaMask not detected. Please install MetaMask first.');
-                return;
-            }
 
-            // get wallet address
-            await window.ethereum.request({
-                method: 'eth_requestAccounts'
-            });
-            window.web3 = new Web3(window.ethereum);
-            accounts = await web3.eth.getAccounts();
-            account = accounts[0];
-
-            // get unique message
-            let response = await fetch(`../user/login/metamask`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    'account': account,
-                    '_token': 'ITbyuJKWQX2cnTRIsjXHnlLvCanqfzAAI95O5ZNE'
-                })
-            });
-            message = (await response.json()).message;
-            setTimeout(async () => {
-                // get signature
-                signature = await web3.eth.personal.sign(message, account);
-
-                // verify signature
-                response = await fetch(`../user/login/metamask/verify`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        'signature': signature,
-                        '_token': 'ITbyuJKWQX2cnTRIsjXHnlLvCanqfzAAI95O5ZNE'
-                    })
-                });
-                response = await response.json();
-
-                notify(response.type, response.message);
-
-                // handle login
-                if (response.type == 'success') {
-                    setTimeout(() => {
-                        window.location.href = response.redirect_url;
-                    }, 2000);
-                }
-            }, 1500);
-
-        })
-    </script>
 
     
     <link rel="stylesheet" href="../assets/global/css/iziToast.min.css">
 <script src="../assets/global/js/iziToast.min.js"></script>
 
+<!-- 
+    <script src="../assets/global/js/firebase/firebase-8.3.2.js"></script> -->
 
-    <script src="../assets/global/js/firebase/firebase-8.3.2.js"></script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6663570c981b6c56477ab426/1hvq0o2ev';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
 
-
-<!-- <script src="../../code.tidio.co_443/ul5qgbsv4aaw44cev9wh3hoyyxwmkqqa.js" async></script> -->
-	<!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-        (function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/663a749d9a809f19fb2e6ad4/1hta5f1v7';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
-        })();
-        </script>
-        <!--End of Tawk.to Script-->
 
     <script type="module" src="../front/public/js/routes/login.js"></script>
 </body>
