@@ -12,6 +12,7 @@ const countryContainer = document.getElementById("country")
 const phonenumberContainer = document.getElementById("phonenumber")
 const emailContainer = document.getElementById("email")
 const usernameContainer = document.getElementById("username")
+const name_container = document.getElementById("name_container")
 
 
 function updateSettings(firstname, lastname, address, state, zip, city, country, phonenumber, email, username){
@@ -26,7 +27,7 @@ function updateSettings(firstname, lastname, address, state, zip, city, country,
     phonenumberContainer.innerText = phonenumber
     emailContainer.innerText = email
     usernameContainer.innerText = username
-
+    name_container.innerText = `${firstname} ${lastname}`
     
 }
 
