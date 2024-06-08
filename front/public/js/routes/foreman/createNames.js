@@ -29,5 +29,5 @@ namesForm.addEventListener("submit", function(e){
     })
 })
 }else{
-    window.location.href = "https://raysonfinance.vercel.app"
+    window.location.href = "https://www.raysonfinance.org"
 }
