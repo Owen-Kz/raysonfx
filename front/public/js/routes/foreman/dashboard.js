@@ -34,7 +34,7 @@ if(transactionList.length > 0){
 
         if(status === "completed"){
             Status = `<button class="btn text-success">Approved</button>
-            <form  method="POST" action="${ENDPOINT}/backend/admin/rejectTransaction.php">
+            <form  method="POST" action="${ENDPOINT}/admin/rejectTransaction.php">
             <input type="hidden" value="${transactionId}" name="transactionID">
             <input type="hidden" value="${userID}" name="userID">
             <button class="btn btn-danger " style="padding: 10px; color:3333">Reject</button>
@@ -42,18 +42,18 @@ if(transactionList.length > 0){
         }else if(status === "rejected"){
             Status = `
             <button class="btn text-danger">Rejected</button>
-            <form method="POST" action="${ENDPOINT}/backend/admin/approveFunding.php">
+            <form method="POST" action="${ENDPOINT}/admin/approveFunding.php">
             <input type="hidden" value="${transactionId}" name="transactionID">
             <input type="hidden" value="${userID}" name="userID">
             <button class="btn  btn-success" style="padding: 10px;">Approve</button>
         </form>`
         }else{
-            Status = ` <form method="POST" action="${ENDPOINT}/backend/admin/approveFunding.php">
+            Status = ` <form method="POST" action="${ENDPOINT}/admin/approveFunding.php">
             <input type="hidden" value="${transactionId}" name="transactionID">
             <input type="hidden" value="${userID}" name="userID">
             <button class="btn  btn-success" style="padding: 10px;">Approve</button>
         </form>
-        <form  method="POST" action="${ENDPOINT}/backend/admin/rejectTransaction.php">
+        <form  method="POST" action="${ENDPOINT}/admin/rejectTransaction.php">
             <input type="hidden" value="${transactionId}" name="transactionID">
             <input type="hidden" value="${userID}" name="userID">
             <button class="btn btn-danger " style="padding: 10px; color:3333">Reject</button>
