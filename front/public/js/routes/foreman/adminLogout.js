@@ -11,15 +11,15 @@ function logout(){
 
 DeleteCookie("admin_u_id")
 
-    fetch(`${ENDPOINT}/admin/logout.php`, {
-        method:"GET"
-    }).then(res => res.json())
-    .then(data=>{
-        if(data){
-            console.log(data)
-        }
+    // fetch(`${ENDPOINT}/admin/logout.php`, {
+    //     method:"GET"
+    // }).then(res => res.json())
+    // .then(data=>{
+    //     if(data){
+    //         console.log(data)
+    //     }
         window.location.href = `${parentDirectoryName}/foreman/login`
-    })
+    // })
 }
 logout()
 
