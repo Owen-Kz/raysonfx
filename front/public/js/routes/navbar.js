@@ -11,25 +11,25 @@ function getURL(){
 
 const url = getURL()
 let dashboardActive, WithdrawActive, TransactionsActive, DepositActive, InvestmentActive, ReferralsActive
-if(url === `${parentDirectoryName}/user/dashboard.html`){
+if(url === `/user/dashboard.html`){
     dashboardActive = 'active'
 }
-if(url === `${parentDirectoryName}/user/transactions.html`){
+if(url === `/user/transactions.html`){
     TransactionsActive = 'active'
 }
-if(url === `${parentDirectoryName}/user/plan.html`){
+if(url === `/user/plan.html`){
     InvestmentActive = 'active'
 }
-if(url === `${parentDirectoryName}/user/dashboard.html`){
+if(url === `/user/dashboard.html`){
     dashboardActive = 'active'
 }
-if(url === `${parentDirectoryName}/user/deposit.html` || url ===   `${parentDirectoryName}/user/deposit/history.html` || url ===   `${parentDirectoryName}/user/deposit/manual.html`){
+if(url === `/user/deposit.html` || url ===   `/user/deposit/history.html` || url ===   `/user/deposit/manual.html`){
     DepositActive = 'active'
 }
-if(url === `${parentDirectoryName}/user/withdraw.html` || url ===   `${parentDirectoryName}/user/withdraw/history.html`){
+if(url === `/user/withdraw.html` || url ===   `/user/withdraw/history.html`){
     WithdrawActive = 'active'
 }
-if(url === `${parentDirectoryName}/user/referrals.html`){
+if(url === `/user/referrals.html`){
     ReferralsActive = 'active'
 }
 
