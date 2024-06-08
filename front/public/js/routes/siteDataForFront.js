@@ -8,7 +8,7 @@ const phoneContainer = document.querySelectorAll('.phonenumber_container')
 
 
 emailContainer.forEach(container =>{
-    container.innerText = "info@raysonfinance.com" 
+    container.innerText = "info@raysonfinance.org" 
 })
 
 addressContainer.forEach(container =>{
