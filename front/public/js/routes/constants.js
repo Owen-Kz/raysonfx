@@ -39,7 +39,7 @@ if(parentDIRName === "raysonfx"){
 }else{
     parentDirectoryName = `${origin}`
     // ENDPOINT = `/backend` 
-    ENDPOINT = 'https://agorea-app-ce52060b3253.herokuapp.com/backend'
+    ENDPOINT = 'http://localhost/raysonfx_backend/backend'
 }
 
 export {
