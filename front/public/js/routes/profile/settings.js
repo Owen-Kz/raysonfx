@@ -1,6 +1,8 @@
 import { ENDPOINT } from "../constants.js"
 import { GetCookie } from "../setCookies.js";
 
+const emailContainer = document.getElementById("email")
+
 const updateDataForm = document.getElementById("updateDataForm");
 const firstnameContainer = document.getElementById("firstname")
 const lastnameContainer = document.getElementById('lastname')
@@ -10,7 +12,6 @@ const zipContainer = document.getElementById("zip")
 const cityContainer = document.getElementById("city")
 const countryContainer = document.getElementById("country")
 const phonenumberContainer = document.getElementById("phonenumber")
-const emailContainer = document.getElementById("email")
 const usernameContainer = document.getElementById("username")
 const name_container = document.getElementById("name_container")
 

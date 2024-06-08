@@ -62,7 +62,8 @@ function ValidateLogin(){
                         }
                     }
                     CreatNavigation(AccountBalance.toFixed(2), new Number(InterestEarned).toFixed(2))
-
+                    console.log(getURL())
+                    console.log(parentDirectoryName)
                     if(getURL() === `${parentDirectoryName}/user/profile-setting.html`){
                         updateSettings(firstname, lastname, address, state, zip, city, country, phonenumber, userEmail, userName)
                     }
