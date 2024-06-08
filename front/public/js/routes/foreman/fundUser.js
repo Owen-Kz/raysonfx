@@ -28,12 +28,14 @@ if(AdminLoggedIn){
             }
         }).then(res => res.json())
         .then(data=>{
+            if(data){
             if(data.status === "success"){
                 alert(data.message)
                 window.location.href = `${parentDirectoryName}/foreman/dashboard`
             }else{
                 alert(data.message)
             }
+        }
         })
     })
 }else{
