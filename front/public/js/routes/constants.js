@@ -34,12 +34,13 @@ function getURL(){
 
 if(parentDIRName === "raysonfx"){
     parentDirectoryName = `/${parentDIRName}`
-    ENDPOINT = `http://localhost/raysonfx_backend/backend`
-    // ENDPOINT = 'https://agorea-app-ce52060b3253.herokuapp.com/backend'
+    // ENDPOINT = `http://localhost/raysonfx_backend/backend`
+    ENDPOINT = 'https://agorea-app-ce52060b3253.herokuapp.com/backend'
 }else{
     parentDirectoryName = `${origin}`
     // ENDPOINT = `/backend` 
-    ENDPOINT = 'http://localhost/raysonfx_backend/backend'
+    ENDPOINT = 'https://agorea-app-ce52060b3253.herokuapp.com/backend'
+
 }
 
 export {
