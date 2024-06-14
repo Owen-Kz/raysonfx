@@ -1000,7 +1000,7 @@
     <script src="../assets/global/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/templates/metro_hyip/js/main.js"></script>
 
-            <script>
+    <script>
         "use strict";
         (function($) {
                             $(`option[data-code=NG]`).attr('selected', '');
@@ -1013,16 +1013,25 @@
             $('input[name=mobile_code]').val($('select[name=country] :selected').data('mobile_code'));
             $('input[name=country_code]').val($('select[name=country] :selected').data('code'));
             $('.mobile-code').text('+' + $('select[name=country] :selected').data('mobile_code'));
+            $('.checkUser').on('focusout', function(e) {
 
-                
 
-           
-
+                var url = 'check-mail.html';
+                var value = $(this).val();
+                var token = 'ITbyuJKWQX2cnTRIsjXHnlLvCanqfzAAI95O5ZNE';
+                if ($(this).attr('name') == 'mobile') {
+                    var mobile = `${$('.mobile-code').text().substr(1)}${value}`;
+                    console.log(mobile);
+                    var data = {
+                        mobile: mobile,
+                        _token: token
+                    }
+                }
 
             });
 
            
-       
+        })(jQuery);
     </script>
 
     
