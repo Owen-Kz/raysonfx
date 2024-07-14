@@ -22,9 +22,9 @@ const getUser = JSON.parse(GetCookie("userData"))
                     receiverEmail: finalUserData[0].email,
                     Year: DateOJ,
                     recipientName: `${finalUserData[0].first_name}  ${finalUserData[0].last_name}`,
-                    subject: `Welcome to AlphaforexLyfe`,
+                    subject: `Welcome to RaysonFinance`,
                     message:  `
-                                <div><img src="https://res.cloudinary.com/dll8awuig/image/upload/v1717282518/raysonFinance_lg8whf.jpg" width=100% alt=www.alphaforexlyfe.com></div>
+                                <div><img src="https://res.cloudinary.com/dll8awuig/image/upload/v1717282518/raysonFinance_lg8whf.jpg" width=100% alt=www.raysonfinance.org</div>
                                 <h1>Hi there, ${finalUserData[0].first_name}</h1>
                                 <h2>Thanks For Joining us,</h2>
                                 <p>Please proceed to, verify your email, make a deposit and start earning.</p>
