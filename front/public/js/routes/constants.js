@@ -34,8 +34,8 @@ function getURL(){
 
 if(parentDIRName === "raysonfx"){
     parentDirectoryName = `/${parentDIRName}`
-    ENDPOINT = `https://t11.asfirj.org/backend`
-    // ENDPOINT = 'https://c6.asfirj.org/prism/backend'
+    // ENDPOINT = `https://t11.asfirj.org/backend`
+    ENDPOINT = 'http://localhost/raysonfx_backend/backend'
     // ENDPOINT = 'https://agorea-app-ce52060b3253.herokuapp.com/'
 
 }else{

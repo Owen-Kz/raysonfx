@@ -2,8 +2,15 @@ import { ENDPOINT } from "../constants.js"
 const SiteData = []
 
 function GetSiteData() {
+    const data = {
+        origin: window.location.hostname
+    }
     return fetch(`${ENDPOINT}/admin/getSiteSettings.php`, {
-        method: "GET",
+        method: "POST",
+        body:JSON.stringify(data),
+        headers:{
+            "Content-type" : "application/JSON"
+        }
     })
     .then(res => res.json())
     .then(data => {
